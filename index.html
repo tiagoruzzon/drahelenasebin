@@ -1,11 +1,2124 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <title>Meu Site no GitHub Pages</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Helena Sebin | Biomédica Esteta — Ciência, Naturalidade e Sofisticação</title>
+  <meta name="description" content="Dra. Helena Sebin (CRBM 71848) — Biomédica Esteta em São José dos Campos. Harmonização facial e corporal, bioestimuladores de colágeno, preenchedores e rejuvenescimento integrativo com naturalidade e embasamento científico." />
+  <meta name="theme-color" content="#FAF7F2" />
+
+  <!-- Google Fonts: Editorial Serif (Cormorant Garamond) + Refined Sans (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#FAF7F2',
+            pearl: '#F3EDE3',
+            nude: '#E6DDD0',
+            sand: '#D5C7B4',
+            champagne: {
+              light: '#DFC699',
+              DEFAULT: '#B89146',
+              dark: '#8C6B2B',
+            },
+            graphite: {
+              DEFAULT: '#1E1B18',
+              soft: '#46403A',
+              muted: '#6E655D',
+            },
+            terracotta: {
+              DEFAULT: '#7C2922',
+              soft: '#9E473E',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'editorial': '0 25px 60px -15px rgba(30, 27, 24, 0.12)',
+            'gold-glow': '0 12px 35px -8px rgba(184, 145, 70, 0.35)',
+            'card-soft': '0 15px 40px -12px rgba(30, 27, 24, 0.07)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-ivory: #FAF7F2;
+      --bg-pearl: #F3EDE3;
+      --bg-nude: #E6DDD0;
+      --text-graphite: #1E1B18;
+      --text-soft: #46403A;
+      --accent-gold: #B89146;
+      --accent-gold-light: #DFC699;
+      --accent-crimson: #7C2922;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html.lenis, html.lenis body {
+      height: auto;
+    }
+    .lenis.lenis-smooth {
+      scroll-behavior: auto !important;
+    }
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    body {
+      background-color: var(--bg-ivory);
+      color: var(--text-graphite);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Subtle noise grain overlay for editorial feel */
+    .bg-grain {
+      background-image: radial-gradient(rgba(184, 145, 70, 0.08) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+
+    /* Satin Sheen / Shimmer Effect on CTAs */
+    .btn-sheen {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background-color 0.3s ease;
+    }
+    .btn-sheen::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 65%;
+      height: 100%;
+      background: linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.38) 50%,
+        transparent 100%
+      );
+      transform: skewX(-20deg);
+      transition: left 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .btn-sheen:hover::before {
+      left: 140%;
+    }
+    .btn-sheen:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Custom Refined Cursor (Desktop Only) */
+    @media (pointer: fine) {
+      .custom-cursor-dot,
+      .custom-cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 9999px;
+        transform: translate(-50%, -50%);
+      }
+      .custom-cursor-dot {
+        width: 6px;
+        height: 6px;
+        background-color: var(--accent-gold);
+        transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease;
+      }
+      .custom-cursor-ring {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(184, 145, 70, 0.5);
+        background-color: rgba(184, 145, 70, 0.04);
+        transition: width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                    height 0.3s cubic-bezier(0.19, 1, 0.22, 1),
+                    border-color 0.3s ease,
+                    background-color 0.3s ease;
+      }
+      body.cursor-hover .custom-cursor-ring {
+        width: 58px;
+        height: 58px;
+        border-color: rgba(184, 145, 70, 0.85);
+        background-color: rgba(184, 145, 70, 0.12);
+      }
+    }
+    @media (pointer: coarse) {
+      .custom-cursor-dot,
+      .custom-cursor-ring {
+        display: none !important;
+      }
+    }
+
+    /* Editorial image frame hover */
+    .editorial-img-wrap {
+      overflow: hidden;
+    }
+    .editorial-img-wrap img {
+      transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .editorial-img-wrap:hover img {
+      transform: scale(1.045);
+    }
+
+    /* Timeline active step styling */
+    .timeline-step {
+      transition: border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    .timeline-step.is-active {
+      border-color: #B89146;
+      background-color: #FFFFFF;
+      box-shadow: 0 20px 50px -15px rgba(184, 145, 70, 0.18);
+    }
+    .timeline-step.is-active .step-badge {
+      background-color: #B89146;
+      color: #FFFFFF;
+      border-color: #B89146;
+      box-shadow: 0 0 0 6px rgba(184, 145, 70, 0.18);
+    }
+
+    /* Treatment nav pill active */
+    .treatment-nav-item.active {
+      border-left-color: #B89146;
+      background: linear-gradient(90deg, rgba(184, 145, 70, 0.12) 0%, rgba(184, 145, 70, 0) 100%);
+      color: #1E1B18;
+    }
+    .treatment-nav-item.active .nav-index {
+      color: #B89146;
+      font-weight: 700;
+    }
+
+    /* Glass header */
+    .glass-nav {
+      background: rgba(250, 247, 242, 0.86);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF7F2;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D5C7B4;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B89146;
+    }
+
+    /* Accessibility focus ring */
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid #B89146;
+      outline-offset: 3px;
+    }
+  </style>
 </head>
-<body>
-  <h1>Olá, mundo!</h1>
-  <p>Meu site estático publicado via GitHub Pages.</p>
+
+<body class="selection:bg-champagne/25 selection:text-graphite">
+  <!-- Top Scroll Progress Bar -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-champagne-dark via-champagne to-terracotta z-[60] w-0 transition-[width] duration-75"></div>
+
+  <!-- Custom Cursor Elements -->
+  <div id="cursor-dot" class="custom-cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- Skip to Content Link (Accessibility WCAG AA) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-graphite focus:text-ivory focus:px-4 focus:py-2 focus:rounded-lg">
+    Pular para o conteúdo principal
+  </a>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500 glass-nav border-b border-sand/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#hero" class="group flex items-center gap-3 focus:outline-none" aria-label="Dra. Helena Sebin - Início">
+        <div class="w-10 h-10 rounded-full border border-champagne/60 bg-pearl flex items-center justify-center font-serif text-lg font-semibold text-graphite group-hover:bg-champagne group-hover:text-white transition-colors duration-300">
+          HS
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl sm:text-2xl tracking-wide font-semibold text-graphite leading-none">
+            Dra. Helena Sebin
+          </span>
+          <span class="text-[10px] uppercase tracking-[0.24em] text-graphite-muted mt-1 font-medium">
+            Biomédica Esteta • CRBM 71848
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-graphite-soft" aria-label="Navegação Principal">
+        <a href="#sobre" class="hover:text-champagne-dark transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-champagne hover:after:w-full after:transition-all">A Especialista</a>
+        <a href="#tratamentos" class="hover:text-champagne-dark transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-champagne hover:after:w-full after:transition-all">Procedimentos</a>
+        <a href="#metodologia" class="hover:text-champagne-dark transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-champagne hover:after:w-full after:transition-all">Linha do Cuidado</a>
+        <a href="#filosofia" class="hover:text-champagne-dark transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-champagne hover:after:w-full after:transition-all">Filosofia</a>
+        <a href="#galeria" class="hover:text-champagne-dark transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-champagne hover:after:w-full after:transition-all">Portfólio Visual</a>
+        <a href="#depoimentos" class="hover:text-champagne-dark transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-champagne hover:after:w-full after:transition-all">Experiências</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button
+          type="button"
+          onclick="openBookingModal('Avaliação Clínica Personalizada')"
+          class="btn-sheen magnetic-btn inline-flex items-center gap-2.5 bg-graphite text-ivory hover:bg-champagne-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.16em] font-semibold shadow-sm"
+        >
+          <span>Agendar Consulta</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Trigger -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="lg:hidden p-2.5 rounded-full border border-sand/60 text-graphite hover:bg-pearl transition-colors"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+      >
+        <svg id="menu-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M10 17h10" />
+        </svg>
+        <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-ivory/98 backdrop-blur-xl border-b border-sand/60 px-6 pt-4 pb-8 space-y-5">
+      <div class="flex flex-col space-y-3 text-base font-serif text-xl text-graphite">
+        <a href="#sobre" class="mobile-nav-link py-1.5 border-b border-sand/30 flex justify-between items-center">
+          <span>A Especialista</span>
+          <span class="text-xs font-sans text-champagne">01</span>
+        </a>
+        <a href="#tratamentos" class="mobile-nav-link py-1.5 border-b border-sand/30 flex justify-between items-center">
+          <span>Procedimentos & Protocolos</span>
+          <span class="text-xs font-sans text-champagne">02</span>
+        </a>
+        <a href="#metodologia" class="mobile-nav-link py-1.5 border-b border-sand/30 flex justify-between items-center">
+          <span>Linha do Cuidado</span>
+          <span class="text-xs font-sans text-champagne">03</span>
+        </a>
+        <a href="#filosofia" class="mobile-nav-link py-1.5 border-b border-sand/30 flex justify-between items-center">
+          <span>Filosofia Integrativa</span>
+          <span class="text-xs font-sans text-champagne">04</span>
+        </a>
+        <a href="#galeria" class="mobile-nav-link py-1.5 border-b border-sand/30 flex justify-between items-center">
+          <span>Galeria Clínica</span>
+          <span class="text-xs font-sans text-champagne">05</span>
+        </a>
+        <a href="#depoimentos" class="mobile-nav-link py-1.5 border-b border-sand/30 flex justify-between items-center">
+          <span>Depoimentos & Dúvidas</span>
+          <span class="text-xs font-sans text-champagne">06</span>
+        </a>
+      </div>
+      <div class="pt-2 flex flex-col gap-3">
+        <button
+          type="button"
+          onclick="openBookingModal('Avaliação Clínica Personalizada')"
+          class="btn-sheen w-full py-3.5 rounded-full bg-graphite text-ivory text-xs uppercase tracking-[0.18em] font-semibold flex items-center justify-center gap-2"
+        >
+          <span>Agendar Consulta Individualizada</span>
+        </button>
+        <a
+          href="https://www.instagram.com/drahelenasebin/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-3 rounded-full border border-sand text-graphite-soft text-xs uppercase tracking-[0.15em] font-medium text-center hover:bg-pearl transition-colors"
+        >
+          Instagram @drahelenasebin
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ==================== 1. HERO SECTION DINÂMICA ==================== -->
+    <section id="hero" class="relative min-h-screen pt-28 pb-16 lg:pt-32 lg:pb-24 flex items-center overflow-hidden bg-grain">
+      <!-- Ambient Decorative Glows -->
+      <div class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-champagne/15 blur-3xl"></div>
+      <div class="pointer-events-none absolute top-1/3 right-0 w-[28rem] h-[28rem] rounded-full bg-terracotta/10 blur-3xl"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- Left Column: Editorial Typography & Value Proposition -->
+          <div class="lg:col-span-7 space-y-7">
+            <!-- Credential Pill -->
+            <div class="hero-reveal inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-pearl border border-sand/80 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-champagne animate-pulse"></span>
+              <span class="text-[11px] sm:text-xs uppercase tracking-[0.22em] text-graphite-soft font-semibold">
+                Biomedicina Estética Facial & Corporal • CRBM 71848
+              </span>
+            </div>
+
+            <!-- Main Editorial Headline -->
+            <div class="space-y-2">
+              <p class="hero-reveal font-serif italic text-xl sm:text-2xl text-champagne-dark">
+                Dra. Helena Sebin
+              </p>
+              <h1 class="hero-reveal font-serif text-4xl sm:text-6xl lg:text-[4.15rem] leading-[1.06] text-graphite font-medium tracking-tight">
+                Realçando sua <span class="italic font-normal text-terracotta">beleza natural</span> com ciência e sofisticação.
+              </h1>
+            </div>
+
+            <!-- Lead Paragraph -->
+            <p class="hero-reveal text-base sm:text-lg text-graphite-soft leading-relaxed max-w-xl font-normal">
+              Uma abordagem clínica integrativa que respeita a sua anatomia única e trata a saúde da pele <strong class="font-semibold text-graphite">de dentro para fora</strong>. Longevidade dérmica, rejuvenescimento elegante e resultados que preservam a sua essência — sem exageros.
+            </p>
+
+            <!-- Primary & Secondary CTAs -->
+            <div class="hero-reveal pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <button
+                type="button"
+                onclick="openBookingModal('Agendamento via Hero - Avaliação Individualizada')"
+                class="btn-sheen magnetic-btn inline-flex items-center justify-center gap-3 bg-graphite hover:bg-champagne-dark text-ivory px-8 py-4 rounded-full text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold shadow-editorial group"
+              >
+                <span>Agendar Consulta</span>
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+
+              <a
+                href="#tratamentos"
+                class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-full border border-graphite/25 hover:border-champagne bg-white/60 hover:bg-white text-graphite text-xs sm:text-sm uppercase tracking-[0.16em] font-medium transition-all"
+              >
+                <span>Conhecer Protocolos</span>
+              </a>
+            </div>
+
+            <!-- Trust & Authority Pillars -->
+            <div class="hero-reveal pt-6 border-t border-sand/60 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl">
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-semibold text-graphite">100%</p>
+                <p class="text-xs text-graphite-muted mt-0.5 leading-snug">Planejamento anatômico individualizado</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-semibold text-graphite">Integrativa</p>
+                <p class="text-xs text-graphite-muted mt-0.5 leading-snug">Saúde celular e estímulo de dentro para fora</p>
+              </div>
+              <div>
+                <p class="font-serif text-2xl sm:text-3xl font-semibold text-graphite">SJC • SP</p>
+                <p class="text-xs text-graphite-muted mt-0.5 leading-snug">Helbor Offices Jardim das Colinas</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Editorial Portrait with Parallax & Floating Cards -->
+          <div class="lg:col-span-5 relative">
+            <!-- Decorative Arch / Frame Behind -->
+            <div class="absolute -inset-3 sm:-inset-5 border border-champagne/35 rounded-t-[160px] rounded-b-3xl pointer-events-none translate-x-2 translate-y-2"></div>
+
+            <!-- Main Portrait Container (aspect-[3/4]) -->
+            <div class="hero-image-card relative aspect-[3/4] w-full max-w-md mx-auto rounded-t-[150px] rounded-b-2xl overflow-hidden shadow-editorial border border-white/80 bg-pearl">
+              <img
+                id="hero-parallax-img"
+                src="Fotos/IMG_8596.JPG.jpeg"
+                alt="Retrato profissional da Dra. Helena Sebin, Biomédica Esteta"
+                class="w-full h-[112%] object-cover object-top -mt-4"
+              />
+              <!-- Subtle Gradient Vignette -->
+              <div class="absolute inset-0 bg-gradient-to-t from-graphite/45 via-transparent to-transparent"></div>
+
+              <!-- Bottom Overlay Caption inside Portrait -->
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-ivory">
+                <div>
+                  <span class="text-[10px] uppercase tracking-[0.22em] text-champagne-light block">Biomédica Esteta</span>
+                  <p class="font-serif text-2xl font-medium">Dra. Helena Sebin</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-graphite/70 backdrop-blur-md text-[11px] tracking-wider border border-white/15">
+                  CRBM 71848
+                </span>
+              </div>
+            </div>
+
+            <!-- Floating Secondary Card: Digital Assessment (Parallax Layer) -->
+            <div
+              id="hero-floating-badge"
+              class="hidden sm:flex items-center gap-3.5 absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-editorial border border-sand/60 max-w-[260px]"
+            >
+              <img
+                src="Fotos/IMG_8621.JPG.jpeg"
+                alt="Dra. Helena realizando planejamento digital com iPad"
+                class="w-14 h-16 rounded-xl object-cover flex-shrink-0"
+              />
+              <div>
+                <span class="text-[10px] uppercase tracking-[0.18em] text-champagne-dark font-bold block">Diagnóstico Preciso</span>
+                <p class="font-serif text-base font-semibold text-graphite leading-tight mt-0.5">
+                  Avaliação Clínica & Digital
+                </p>
+                <p class="text-[11px] text-graphite-muted mt-0.5">
+                  Protocolos sob medida para sua pele
+                </p>
+              </div>
+            </div>
+
+            <!-- Floating Top-Right Seal -->
+            <div class="hidden sm:flex items-center gap-2 absolute top-6 -right-4 bg-ivory/95 backdrop-blur-md px-4 py-2.5 rounded-full shadow-card-soft border border-champagne/40">
+              <svg class="w-4 h-4 text-champagne-dark" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-[11px] font-semibold text-graphite tracking-wide">Ativos de Alta Performance</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== MARQUEE ESSÊNCIA DA MARCA ==================== -->
+    <div class="bg-graphite text-ivory py-4 border-y border-champagne/30 overflow-hidden select-none" aria-hidden="true">
+      <div class="flex items-center justify-around gap-8 text-xs uppercase tracking-[0.26em] text-champagne-light/90 whitespace-nowrap overflow-x-auto no-scrollbar px-4">
+        <span>✦ Naturalidade & Ciência</span>
+        <span>✦ Longevidade Dérmica</span>
+        <span>✦ Bioestimuladores de Colágeno</span>
+        <span>✦ Estética Integrativa Facial & Corporal</span>
+        <span>✦ Harmonização Sem Exageros</span>
+        <span>✦ Atendimento Individualizado</span>
+      </div>
+    </div>
+
+    <!-- ==================== 2. SOBRE A ESPECIALISTA ==================== -->
+    <section id="sobre" class="py-24 lg:py-32 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <!-- Left: Editorial Photo Composition -->
+          <div class="lg:col-span-6 relative">
+            <div class="grid grid-cols-12 gap-4 items-end">
+              <!-- Primary Portrait -->
+              <div class="col-span-7 sm:col-span-7 editorial-img-wrap rounded-2xl shadow-editorial border border-sand/60 aspect-[3/4] bg-pearl relative">
+                <img
+                  src="Fotos/IMG_8595.JPG.jpeg"
+                  alt="Dra. Helena Sebin contemplando o espaço clínico"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Secondary Portrait Stack -->
+              <div class="col-span-5 sm:col-span-5 space-y-4">
+                <div class="editorial-img-wrap rounded-2xl shadow-card-soft border border-sand/60 aspect-[3/4] bg-pearl">
+                  <img
+                    src="Fotos/IMG_8627.JPG.jpeg"
+                    alt="Dra. Helena Sebin sorrindo com acolhimento"
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="p-4 sm:p-5 rounded-2xl bg-pearl border border-champagne/40">
+                  <p class="font-serif italic text-lg sm:text-xl text-graphite leading-snug">
+                    “A estética de excelência revela o melhor de você sem jamais transformar quem você é.”
+                  </p>
+                  <p class="text-[11px] uppercase tracking-[0.18em] text-champagne-dark mt-2 font-semibold">
+                    — Dra. Helena Sebin
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Biography & Clinical Credentials -->
+          <div class="lg:col-span-6 space-y-6 reveal-up">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold">
+              <span class="w-8 h-[1px] bg-champagne"></span>
+              <span>Sobre a Especialista</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-5xl text-graphite font-medium leading-[1.12]">
+              Ciência integrativa dedicada à sua <span class="italic text-terracotta">autoestima e saúde dérmica</span>.
+            </h2>
+
+            <div class="space-y-4 text-graphite-soft text-base leading-relaxed">
+              <p>
+                A <strong class="text-graphite font-semibold">Dra. Helena Sebin (CRBM 71848)</strong> é Biomédica Esteta apaixonada por unir rigor científico, olhar artístico apurado e atendimento profundamente humanizado em São José dos Campos.
+              </p>
+              <p>
+                Diferente de protocolos padronizados, sua atuação parte de uma <strong class="text-graphite font-semibold">visão integrativa da saúde estética</strong>: compreendendo que a resposta de um bioestimulador de colágeno, o viço da pele ou o sucesso de um tratamento corporal dependem do equilíbrio biológico de cada organismo — tratando de dentro para fora.
+              </p>
+              <p>
+                Em cada consulta, a escuta acolhedora e a avaliação anatômica minuciosa garantem intervenções sutis, elegantes e seguras, priorizando a longevidade da pele e a confiança de se reconhecer no espelho.
+              </p>
+            </div>
+
+            <!-- Highlights Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3">
+              <div class="p-4 rounded-xl bg-white/80 border border-sand/60 flex items-start gap-3.5 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-pearl border border-champagne/30 flex items-center justify-center text-champagne-dark flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif text-lg font-semibold text-graphite">Segurança & Embasamento</h3>
+                  <p class="text-xs text-graphite-muted leading-relaxed mt-0.5">Insumos aprovados pela ANVISA e marcas líderes mundiais como linha Rennova.</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white/80 border border-sand/60 flex items-start gap-3.5 shadow-sm">
+                <div class="w-10 h-10 rounded-lg bg-pearl border border-champagne/30 flex items-center justify-center text-champagne-dark flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-serif text-lg font-semibold text-graphite">Olhar Integrativo</h3>
+                  <p class="text-xs text-graphite-muted leading-relaxed mt-0.5">Avaliação sistêmica de vitaminas, inflamação e qualidade tecidual para resultados duradouros.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 flex flex-wrap items-center gap-4">
+              <button
+                type="button"
+                onclick="openBookingModal('Consulta com a Dra. Helena Sebin')"
+                class="btn-sheen inline-flex items-center gap-2.5 bg-champagne hover:bg-champagne-dark text-white px-7 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] font-semibold shadow-gold-glow"
+              >
+                <span>Agendar Avaliação com a Dra. Helena</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+              <a
+                href="https://www.instagram.com/drahelenasebin/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-graphite-soft hover:text-champagne-dark font-semibold py-2"
+              >
+                <span>Acompanhar no Instagram</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. NARRATIVA DOS TRATAMENTOS (PINNED SCROLLYTELLING) ==================== -->
+    <section id="tratamentos" class="py-24 lg:py-32 bg-pearl/70 border-y border-sand/60 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start">
+          
+          <!-- Left Column: Pinned Narrative & Interactive Index (Sticky on Desktop) -->
+          <div class="lg:col-span-5 lg:sticky lg:top-28 space-y-7">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold">
+              <span class="w-8 h-[1px] bg-champagne"></span>
+              <span>Protocolos de Excelência</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-5xl text-graphite font-medium leading-[1.1]">
+              Ciência aplicada à <span class="italic text-terracotta">harmonia facial e corporal</span>.
+            </h2>
+
+            <p class="text-graphite-soft text-sm sm:text-base leading-relaxed">
+              Cada procedimento é selecionado após diagnóstico clínico detalhado. Trabalhamos com ativos biocompatíveis de alta tecnologia para restaurar estrutura, luminosidade e firmeza com naturalidade absoluta.
+            </p>
+
+            <!-- Interactive Pinned Progress Navigation -->
+            <div class="hidden lg:flex flex-col space-y-1 pt-2" role="navigation" aria-label="Índice de Tratamentos">
+              <a href="#proc-1" data-target="proc-1" class="treatment-nav-item active border-l-2 border-sand pl-4 py-3 transition-all flex items-center justify-between group">
+                <div>
+                  <span class="nav-index text-xs font-mono uppercase tracking-widest text-graphite-muted mr-2">01</span>
+                  <span class="font-serif text-xl font-medium text-graphite group-hover:text-champagne-dark transition-colors">Harmonização & Preenchedores</span>
+                </div>
+                <span class="text-xs text-graphite-muted">Ácido Hialurônico</span>
+              </a>
+              <a href="#proc-2" data-target="proc-2" class="treatment-nav-item border-l-2 border-sand pl-4 py-3 transition-all flex items-center justify-between group">
+                <div>
+                  <span class="nav-index text-xs font-mono uppercase tracking-widest text-graphite-muted mr-2">02</span>
+                  <span class="font-serif text-xl font-medium text-graphite group-hover:text-champagne-dark transition-colors">Bioestimuladores de Colágeno</span>
+                </div>
+                <span class="text-xs text-graphite-muted">Firmeza Facial & Corporal</span>
+              </a>
+              <a href="#proc-3" data-target="proc-3" class="treatment-nav-item border-l-2 border-sand pl-4 py-3 transition-all flex items-center justify-between group">
+                <div>
+                  <span class="nav-index text-xs font-mono uppercase tracking-widest text-graphite-muted mr-2">03</span>
+                  <span class="font-serif text-xl font-medium text-graphite group-hover:text-champagne-dark transition-colors">Qualidade de Pele & Peelings</span>
+                </div>
+                <span class="text-xs text-graphite-muted">Gerenciamento Dérmico</span>
+              </a>
+              <a href="#proc-4" data-target="proc-4" class="treatment-nav-item border-l-2 border-sand pl-4 py-3 transition-all flex items-center justify-between group">
+                <div>
+                  <span class="nav-index text-xs font-mono uppercase tracking-widest text-graphite-muted mr-2">04</span>
+                  <span class="font-serif text-xl font-medium text-graphite group-hover:text-champagne-dark transition-colors">Estética Corporal Integrativa</span>
+                </div>
+                <span class="text-xs text-graphite-muted">Contorno & Desinflamação</span>
+              </a>
+            </div>
+
+            <!-- Pinned Clinical Note Box -->
+            <div class="p-5 rounded-2xl bg-ivory border border-sand/80 shadow-sm space-y-3">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-champagne"></span>
+                <span class="text-xs uppercase tracking-[0.18em] font-semibold text-graphite">Dúvida sobre qual escolher?</span>
+              </div>
+              <p class="text-xs text-graphite-soft leading-relaxed">
+                Você não precisa escolher o procedimento sozinha. Na consulta de avaliação, mapeamos exatamente o que sua pele e anatomia necessitam.
+              </p>
+              <button
+                type="button"
+                onclick="openBookingModal('Descoberta de Protocolo Ideal')"
+                class="text-xs font-semibold uppercase tracking-[0.16em] text-terracotta hover:text-champagne-dark inline-flex items-center gap-1.5 transition-colors"
+              >
+                <span>Solicitar orientação pelo WhatsApp</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Scrolling Visual Treatment Cards -->
+          <div class="lg:col-span-7 space-y-10">
+            
+            <!-- Card 01: Harmonização & Preenchedores (Rennova) -->
+            <article id="proc-1" class="treatment-card scroll-mt-28 bg-ivory rounded-3xl overflow-hidden border border-sand/70 shadow-card-soft hover:shadow-editorial transition-shadow duration-500">
+              <div class="grid grid-cols-1 md:grid-cols-12">
+                <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
+                  <img
+                    src="Fotos/IMG_8600.JPG.jpeg"
+                    alt="Dra. Helena Sebin apresentando preenchedor de Ácido Hialurônico Rennova Fill"
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                  />
+                  <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/80 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
+                    01 • Estrutura & Refinamento
+                  </span>
+                </div>
+                <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                  <div class="space-y-3">
+                    <span class="text-xs uppercase tracking-[0.2em] text-champagne-dark font-semibold">
+                      Ácido Hialurônico de Alta Tecnologia
+                    </span>
+                    <h3 class="font-serif text-2xl sm:text-3xl text-graphite font-semibold leading-tight">
+                      Harmonização Facial, Labial & Preenchedores
+                    </h3>
+                    <p class="text-sm text-graphite-soft leading-relaxed">
+                      Reposição estratégica de pontos de sustentação facial, contorno labial delicado e suavização de olheiras ou sulcos com preenchedores viscoelásticos premium (linha <strong class="text-graphite font-medium">Rennova Fill Hyaluronic</strong>).
+                    </p>
+                    <ul class="pt-2 space-y-2 text-xs text-graphite-soft">
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Respeito absoluto à dinâmica e expressão facial</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Hidratação profunda e projeção sutil sem aspecto artificial</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Toxina Botulínica preventiva para linhas de expressão</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-sand/60 flex flex-wrap items-center justify-between gap-3">
+                    <button
+                      type="button"
+                      onclick="openProtocolDetail('preenchedores')"
+                      class="text-xs uppercase tracking-[0.16em] font-semibold text-graphite-soft hover:text-graphite underline underline-offset-4"
+                    >
+                      Ver detalhes clínicos
+                    </button>
+                    <button
+                      type="button"
+                      onclick="openBookingModal('Harmonização & Preenchedores (Ácido Hialurônico)')"
+                      class="btn-sheen inline-flex items-center gap-2 bg-graphite text-ivory hover:bg-champagne-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-semibold"
+                    >
+                      <span>Agendar Avaliação</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 02: Bioestimuladores de Colágeno -->
+            <article id="proc-2" class="treatment-card scroll-mt-28 bg-ivory rounded-3xl overflow-hidden border border-sand/70 shadow-card-soft hover:shadow-editorial transition-shadow duration-500">
+              <div class="grid grid-cols-1 md:grid-cols-12">
+                <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
+                  <img
+                    src="Fotos/IMG_8599.JPG.jpeg"
+                    alt="Dra. Helena Sebin com ativos de bioestímulo e preenchedores"
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                  />
+                  <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/80 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
+                    02 • Poupança de Colágeno
+                  </span>
+                </div>
+                <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                  <div class="space-y-3">
+                    <span class="text-xs uppercase tracking-[0.2em] text-champagne-dark font-semibold">
+                      Longevidade & Firmeza Tecidual
+                    </span>
+                    <h3 class="font-serif text-2xl sm:text-3xl text-graphite font-semibold leading-tight">
+                      Bioestimuladores de Colágeno & Toxina Botulínica
+                    </h3>
+                    <p class="text-sm text-graphite-soft leading-relaxed">
+                      Ativação biológica dos fibroblastos para produzir colágeno próprio de alta qualidade. Aliado à abordagem integrativa da Dra. Helena, avaliamos o terreno biológico (vitaminas, minerais e inflamação) para maximizar a resposta tecidual.
+                    </p>
+                    <ul class="pt-2 space-y-2 text-xs text-graphite-soft">
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Combate à flacidez facial, cervical e corporal</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Efeito lifting progressivo, natural e duradouro</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Suavização elegante de rugas dinâmicas com Toxina Botulínica</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-sand/60 flex flex-wrap items-center justify-between gap-3">
+                    <button
+                      type="button"
+                      onclick="openProtocolDetail('bioestimuladores')"
+                      class="text-xs uppercase tracking-[0.16em] font-semibold text-graphite-soft hover:text-graphite underline underline-offset-4"
+                    >
+                      Ver detalhes clínicos
+                    </button>
+                    <button
+                      type="button"
+                      onclick="openBookingModal('Bioestimuladores de Colágeno & Rejuvenescimento')"
+                      class="btn-sheen inline-flex items-center gap-2 bg-graphite text-ivory hover:bg-champagne-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-semibold"
+                    >
+                      <span>Agendar Avaliação</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 03: Protocolos de Rejuvenescimento e Qualidade de Pele -->
+            <article id="proc-3" class="treatment-card scroll-mt-28 bg-ivory rounded-3xl overflow-hidden border border-sand/70 shadow-card-soft hover:shadow-editorial transition-shadow duration-500">
+              <div class="grid grid-cols-1 md:grid-cols-12">
+                <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
+                  <img
+                    src="Fotos/IMG_8609.JPG.jpeg"
+                    alt="Dra. Helena Sebin preparando protocolo de peeling e qualidade de pele"
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                  />
+                  <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/80 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
+                    03 • Glow & Renovação
+                  </span>
+                </div>
+                <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                  <div class="space-y-3">
+                    <span class="text-xs uppercase tracking-[0.2em] text-champagne-dark font-semibold">
+                      Gerenciamento Dérmico Avançado
+                    </span>
+                    <h3 class="font-serif text-2xl sm:text-3xl text-graphite font-semibold leading-tight">
+                      Qualidade de Pele, Peelings Químicos & Limpeza Clínica
+                    </h3>
+                    <p class="text-sm text-graphite-soft leading-relaxed">
+                      Protocolos exclusivos para uniformização do tom da pele, controle de oleosidade, poros dilatados, melasma e renovação celular. Fórmulas magistrais e ativos dermoestéticos aplicados com precisão.
+                    </p>
+                    <ul class="pt-2 space-y-2 text-xs text-graphite-soft">
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Peelings químicos personalizados e revitalização profunda</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Limpeza de pele clínica associada à barreira cutânea íntegra</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Luminosidade acetinada (Skin Quality) desde a primeira sessão</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-sand/60 flex flex-wrap items-center justify-between gap-3">
+                    <button
+                      type="button"
+                      onclick="openProtocolDetail('pele')"
+                      class="text-xs uppercase tracking-[0.16em] font-semibold text-graphite-soft hover:text-graphite underline underline-offset-4"
+                    >
+                      Ver detalhes clínicos
+                    </button>
+                    <button
+                      type="button"
+                      onclick="openBookingModal('Protocolos de Qualidade de Pele & Peelings')"
+                      class="btn-sheen inline-flex items-center gap-2 bg-graphite text-ivory hover:bg-champagne-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-semibold"
+                    >
+                      <span>Agendar Avaliação</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 04: Harmonização Corporal & Tratamentos Integrativos -->
+            <article id="proc-4" class="treatment-card scroll-mt-28 bg-ivory rounded-3xl overflow-hidden border border-sand/70 shadow-card-soft hover:shadow-editorial transition-shadow duration-500">
+              <div class="grid grid-cols-1 md:grid-cols-12">
+                <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
+                  <img
+                    src="Fotos/IMG_8622.JPG.jpeg"
+                    alt="Dra. Helena Sebin em avaliação clínica integrativa corporal e facial"
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                  />
+                  <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/80 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
+                    04 • Visão Sistêmica
+                  </span>
+                </div>
+                <div class="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                  <div class="space-y-3">
+                    <span class="text-xs uppercase tracking-[0.2em] text-champagne-dark font-semibold">
+                      De Dentro Para Fora
+                    </span>
+                    <h3 class="font-serif text-2xl sm:text-3xl text-graphite font-semibold leading-tight">
+                      Harmonização Corporal, Gordura Localizada & Celulite
+                    </h3>
+                    <p class="text-sm text-graphite-soft leading-relaxed">
+                      Protocolos direcionados à remodelação corporal, tratamento da celulite sob ótica anti-inflamatória e redução de gordura localizada, integrando saúde metabólica e procedimentos injetáveis seguros.
+                    </p>
+                    <ul class="pt-2 space-y-2 text-xs text-graphite-soft">
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Abordagem inflamatória e circulatória da celulite</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Enzimas e bioestimuladores corporais para contorno firme</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne"></span>
+                        <span>Acompanhamento individualizado da evolução clínica</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="pt-4 border-t border-sand/60 flex flex-wrap items-center justify-between gap-3">
+                    <button
+                      type="button"
+                      onclick="openProtocolDetail('corporal')"
+                      class="text-xs uppercase tracking-[0.16em] font-semibold text-graphite-soft hover:text-graphite underline underline-offset-4"
+                    >
+                      Ver detalhes clínicos
+                    </button>
+                    <button
+                      type="button"
+                      onclick="openBookingModal('Harmonização Corporal & Estética Integrativa')"
+                      class="btn-sheen inline-flex items-center gap-2 bg-graphite text-ivory hover:bg-champagne-dark px-5 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-semibold"
+                    >
+                      <span>Agendar Avaliação</span>
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. LINHA DO CUIDADO / METODOLOGIA (SCROLL-DRAWN TIMELINE) ==================== -->
+    <section id="metodologia" class="py-24 lg:py-32 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-4 mb-16 lg:mb-20 reveal-up">
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold">
+            <span class="w-6 h-[1px] bg-champagne"></span>
+            <span>Jornada da Paciente</span>
+            <span class="w-6 h-[1px] bg-champagne"></span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl text-graphite font-medium leading-tight">
+            A Linha do Cuidado: como funciona a sua <span class="italic text-terracotta">experiência clínica</span>
+          </h2>
+          <p class="text-graphite-soft text-sm sm:text-base leading-relaxed">
+            Do primeiro contato ao acompanhamento pós-procedimento, cada etapa foi desenhada para oferecer clareza, conforto e previsibilidade científica.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Timeline Column (7 cols) -->
+          <div class="lg:col-span-7 relative pl-6 sm:pl-10" id="care-timeline-container">
+            <!-- Background Track Line -->
+            <div class="absolute left-[19px] sm:left-[35px] top-6 bottom-6 w-[2px] bg-sand/80"></div>
+            <!-- Animated Gold Fill Line (Scrollytelling) -->
+            <div id="timeline-progress-line" class="absolute left-[19px] sm:left-[35px] top-6 w-[2px] bg-gradient-to-b from-champagne via-terracotta to-champagne-dark h-0 transition-none"></div>
+
+            <div class="space-y-8">
+              <!-- Step 1 -->
+              <div class="timeline-step is-active relative pl-8 sm:pl-10 p-6 sm:p-7 rounded-2xl border border-sand/70 bg-ivory/80">
+                <div class="step-badge absolute -left-[22px] sm:-left-[22px] top-7 w-10 h-10 rounded-full border-2 border-sand bg-ivory text-graphite font-serif font-bold text-base flex items-center justify-center transition-all duration-300">
+                  01
+                </div>
+                <span class="text-[11px] uppercase tracking-[0.2em] text-champagne-dark font-semibold">Etapa Inicial</span>
+                <h3 class="font-serif text-2xl text-graphite font-semibold mt-1">
+                  Escuta Ativa & Anamnese Integrativa
+                </h3>
+                <p class="text-sm text-graphite-soft leading-relaxed mt-2">
+                  Compreendemos sua rotina, histórico de saúde, qualidade do sono, nutrição celular e seus desejos estéticos. A beleza real começa quando o organismo está preparado para responder aos estímulos.
+                </p>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="timeline-step relative pl-8 sm:pl-10 p-6 sm:p-7 rounded-2xl border border-sand/70 bg-ivory/80">
+                <div class="step-badge absolute -left-[22px] sm:-left-[22px] top-7 w-10 h-10 rounded-full border-2 border-sand bg-ivory text-graphite font-serif font-bold text-base flex items-center justify-center transition-all duration-300">
+                  02
+                </div>
+                <span class="text-[11px] uppercase tracking-[0.2em] text-champagne-dark font-semibold">Planejamento Digital</span>
+                <h3 class="font-serif text-2xl text-graphite font-semibold mt-1">
+                  Mapeamento Anatômico Individualizado
+                </h3>
+                <p class="text-sm text-graphite-soft leading-relaxed mt-2">
+                  Análise detalhada das proporções faciais ou corporais com auxílio digital no iPad, identificando vetores de sustentação, qualidade dérmica e pontos de luz sem alterar seus traços naturais.
+                </p>
+              </div>
+
+              <!-- Step 3 -->
+              <div class="timeline-step relative pl-8 sm:pl-10 p-6 sm:p-7 rounded-2xl border border-sand/70 bg-ivory/80">
+                <div class="step-badge absolute -left-[22px] sm:-left-[22px] top-7 w-10 h-10 rounded-full border-2 border-sand bg-ivory text-graphite font-serif font-bold text-base flex items-center justify-center transition-all duration-300">
+                  03
+                </div>
+                <span class="text-[11px] uppercase tracking-[0.2em] text-champagne-dark font-semibold">Execução de Precisão</span>
+                <h3 class="font-serif text-2xl text-graphite font-semibold mt-1">
+                  Protocolo Personalizado & Conforto Clínico
+                </h3>
+                <p class="text-sm text-graphite-soft leading-relaxed mt-2">
+                  Realização dos procedimentos com técnicas atraumáticas, anestesia adequada, biossegurança rigorosa e ativos de excelência (como ácido hialurônico Rennova, bioestimuladores e peelings específicos).
+                </p>
+              </div>
+
+              <!-- Step 4 -->
+              <div class="timeline-step relative pl-8 sm:pl-10 p-6 sm:p-7 rounded-2xl border border-sand/70 bg-ivory/80">
+                <div class="step-badge absolute -left-[22px] sm:-left-[22px] top-7 w-10 h-10 rounded-full border-2 border-sand bg-ivory text-graphite font-serif font-bold text-base flex items-center justify-center transition-all duration-300">
+                  04
+                </div>
+                <span class="text-[11px] uppercase tracking-[0.2em] text-champagne-dark font-semibold">Pós-Procedimento</span>
+                <h3 class="font-serif text-2xl text-graphite font-semibold mt-1">
+                  Acompanhamento Próximo & Longevidade
+                </h3>
+                <p class="text-sm text-graphite-soft leading-relaxed mt-2">
+                  Orientações completas de home care, suporte direto pós-atendimento e revisão programada para acompanhar a maturação do colágeno e manter seus resultados elegantes ao longo do ano.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Editorial Visual Column (5 cols) -->
+          <div class="lg:col-span-5 lg:sticky lg:top-28 space-y-5">
+            <div class="editorial-img-wrap rounded-3xl overflow-hidden shadow-editorial border border-sand/70 aspect-[3/4] bg-pearl relative">
+              <img
+                src="Fotos/IMG_8620.JPG.jpeg"
+                alt="Dra. Helena Sebin utilizando iPad para planejamento clínico individualizado"
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-graphite/70 via-transparent to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 text-ivory space-y-1">
+                <span class="text-[10px] uppercase tracking-[0.22em] text-champagne-light font-semibold">Planejamento Sob Medida</span>
+                <p class="font-serif text-2xl leading-snug">
+                  Cada rosto e corpo contam uma história única que merece ser respeitada.
+                </p>
+              </div>
+            </div>
+
+            <!-- Small Duo Preview -->
+            <div class="grid grid-cols-2 gap-4">
+              <div class="editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[4/3]">
+                <img
+                  src="Fotos/IMG_8624.JPG.jpeg"
+                  alt="Registro artístico em preto e branco da Dra. Helena em estudo clínico"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[4/3]">
+                <img
+                  src="Fotos/IMG_8613.JPG.jpeg"
+                  alt="Dra. Helena preparando ativos dermoestéticos em cubeta dourada"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. FILOSOFIA DE ATENDIMENTO ==================== -->
+    <section id="filosofia" class="py-24 lg:py-32 bg-graphite text-ivory relative overflow-hidden">
+      <!-- Subtle Gold Radial Glow -->
+      <div class="pointer-events-none absolute top-0 right-1/4 w-96 h-96 rounded-full bg-champagne/10 blur-3xl"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          
+          <div class="lg:col-span-6 space-y-7 reveal-up">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-champagne-light font-semibold">
+              <span class="w-8 h-[1px] bg-champagne-light"></span>
+              <span>Filosofia de Atendimento</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-5xl font-medium leading-[1.12] text-ivory">
+              Por que acreditamos na estética <span class="italic text-champagne-light">de dentro para fora</span>?
+            </h2>
+
+            <p class="text-ivory/80 text-base leading-relaxed">
+              O verdadeiro rejuvenescimento não se resume a preencher linhas: trata-se de devolver vitalidade às células, desinflamar os tecidos e respeitar a arquitetura anatômica individual.
+            </p>
+
+            <div class="space-y-5 pt-2">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                <span class="font-serif text-2xl text-champagne-light font-semibold leading-none mt-1">I.</span>
+                <div>
+                  <h3 class="font-serif text-xl font-medium text-ivory">Anatomia Singular, Nunca Padronizada</h3>
+                  <p class="text-xs sm:text-sm text-ivory/70 mt-1 leading-relaxed">
+                    Rejeitamos moldes artificiais. Cada mililitro ou estímulo é planejado para valorizar os seus pontos fortes com sutileza e elegância.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                <span class="font-serif text-2xl text-champagne-light font-semibold leading-none mt-1">II.</span>
+                <div>
+                  <h3 class="font-serif text-xl font-medium text-ivory">Sinergia Metabólica & Colágeno</h3>
+                  <p class="text-xs sm:text-sm text-ivory/70 mt-1 leading-relaxed">
+                    Para que bioestimuladores e procedimentos corporais entreguem 100% do seu potencial, avaliamos cofatores biológicos essenciais à síntese de colágeno.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                <span class="font-serif text-2xl text-champagne-light font-semibold leading-none mt-1">III.</span>
+                <div>
+                  <h3 class="font-serif text-xl font-medium text-ivory">Ética, Transparência & Acolhimento</h3>
+                  <p class="text-xs sm:text-sm text-ivory/70 mt-1 leading-relaxed">
+                    Indicações honestas sobre o que realmente trará benefício real para sua queixa, construindo uma relação de confiança a longo prazo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Dual Portrait Showcase -->
+          <div class="lg:col-span-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
+              <div class="editorial-img-wrap rounded-3xl overflow-hidden border border-white/15 aspect-[3/4] shadow-2xl">
+                <img
+                  src="Fotos/IMG_8618.JPG.jpeg"
+                  alt="Retrato editorial da Dra. Helena Sebin"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="space-y-6">
+                <div class="editorial-img-wrap rounded-3xl overflow-hidden border border-white/15 aspect-[3/4] shadow-2xl">
+                  <img
+                    src="Fotos/IMG_8626.JPG.jpeg"
+                    alt="Dra. Helena Sebin com iPad no consultório"
+                    loading="lazy"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="p-5 rounded-2xl bg-champagne/15 border border-champagne/40 text-center">
+                  <p class="text-xs uppercase tracking-[0.22em] text-champagne-light font-semibold">Consultório em SJC</p>
+                  <p class="font-serif text-xl text-ivory mt-1">Helbor Offices • Jd. das Colinas</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. GALERIA EDITORIAL & BASTIDORES ==================== -->
+    <section id="galeria" class="py-24 lg:py-32 bg-ivory">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-up">
+          <div class="space-y-3 max-w-2xl">
+            <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold">
+              <span class="w-8 h-[1px] bg-champagne"></span>
+              <span>Portfólio Visual & Bastidores</span>
+            </div>
+            <h2 class="font-serif text-3xl sm:text-5xl text-graphite font-medium leading-tight">
+              A estética do cuidado em <span class="italic text-terracotta">cada detalhe</span>.
+            </h2>
+          </div>
+
+          <!-- Filter Buttons -->
+          <div class="flex flex-wrap gap-2" role="tablist" aria-label="Filtrar galeria de fotos">
+            <button type="button" onclick="filterGallery('all')" data-filter="all" class="gallery-filter-btn active px-4 py-2 rounded-full text-xs uppercase tracking-[0.15em] font-semibold bg-graphite text-ivory transition-all">
+              Todos
+            </button>
+            <button type="button" onclick="filterGallery('injetaveis')" data-filter="injetaveis" class="gallery-filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-[0.15em] font-semibold bg-pearl text-graphite-soft hover:bg-nude transition-all">
+              Preenchedores & Ativos
+            </button>
+            <button type="button" onclick="filterGallery('skincare')" data-filter="skincare" class="gallery-filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-[0.15em] font-semibold bg-pearl text-graphite-soft hover:bg-nude transition-all">
+              Pele & Peelings
+            </button>
+            <button type="button" onclick="filterGallery('planejamento')" data-filter="planejamento" class="gallery-filter-btn px-4 py-2 rounded-full text-xs uppercase tracking-[0.15em] font-semibold bg-pearl text-graphite-soft hover:bg-nude transition-all">
+              Avaliação & Retratos
+            </button>
+          </div>
+        </div>
+
+        <!-- Gallery Grid (All valid local paths from /Fotos) -->
+        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          
+          <!-- Item 1 -->
+          <figure data-category="injetaveis" onclick="openLightbox('Fotos/IMG_8605.JPG.jpeg', 'Ácido Hialurônico Rennova Fill — Precisão e naturalidade em preenchedores')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8605.JPG.jpeg" alt="Dra. Helena Sebin com ácido hialurônico Rennova Fill" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Rennova Fill Hyaluronic • Preenchedores</span>
+            </figcaption>
+          </figure>
+
+          <!-- Item 2 -->
+          <figure data-category="skincare" onclick="openLightbox('Fotos/IMG_8616.JPG.jpeg', 'Protocolos de Peeling e Renovação Dérmica Personalizada')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8616.JPG.jpeg" alt="Preparação de peeling e protocolo de qualidade da pele" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Protocolos de Qualidade da Pele</span>
+            </figcaption>
+          </figure>
+
+          <!-- Item 3 -->
+          <figure data-category="planejamento" onclick="openLightbox('Fotos/IMG_8608.JPG.jpeg', 'Dra. Helena Sebin — Atendimento acolhedor e individualizado')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8608.JPG.jpeg" alt="Retrato sorridente da Dra. Helena Sebin" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Acolhimento & Ciência</span>
+            </figcaption>
+          </figure>
+
+          <!-- Item 4 -->
+          <figure data-category="planejamento" onclick="openLightbox('Fotos/IMG_8625.JPG.jpeg', 'Anamnese e Planejamento Clínico Digital com iPad')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8625.JPG.jpeg" alt="Dra. Helena realizando planejamento digital no iPad" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Avaliação Anatômica Digital</span>
+            </figcaption>
+          </figure>
+
+          <!-- Item 5 -->
+          <figure data-category="injetaveis" onclick="openLightbox('Fotos/IMG_8602.JPG.jpeg', 'Ativos biocompatíveis de alta segurança clínica')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8602.JPG.jpeg" alt="Apresentação de preenchedor facial de ácido hialurônico" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Ativos de Alta Performance</span>
+            </figcaption>
+          </figure>
+
+          <!-- Item 6 -->
+          <figure data-category="skincare" onclick="openLightbox('Fotos/IMG_8611.JPG.jpeg', 'Delicadeza e precisão nos protocolos faciais')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8611.JPG.jpeg" alt="Detalhe de pincel clínico para protocolo facial" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Gerenciamento Dérmico</span>
+            </figcaption>
+          </figure>
+
+          <!-- Item 7 -->
+          <figure data-category="planejamento" onclick="openLightbox('Fotos/IMG_8619.JPG.jpeg', 'Dra. Helena Sebin — Biomédica Esteta CRBM 71848')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8619.JPG.jpeg" alt="Retrato editorial da Dra. Helena no consultório" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Ambiente Clínico Sofisticado</span>
+            </figcaption>
+          </figure>
+
+          <!-- Item 8 -->
+          <figure data-category="injetaveis" onclick="openLightbox('Fotos/IMG_8604.JPG.jpeg', 'Harmonização e estruturação facial sem exageros')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8604.JPG.jpeg" alt="Dra. Helena Sebin segurando ativo Rennova Fill" loading="lazy" class="w-full h-full object-cover" />
+            <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span class="text-xs text-ivory font-medium">Harmonização & Sustentação</span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. DEPOIMENTOS & DÚVIDAS FREQUENTES ==================== -->
+    <section id="depoimentos" class="py-24 lg:py-32 bg-pearl/70 border-t border-sand/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Testimonials Header -->
+        <div class="max-w-3xl mx-auto text-center space-y-4 mb-16 reveal-up">
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-champagne-dark font-semibold">
+            <span class="w-6 h-[1px] bg-champagne"></span>
+            <span>Confiança & Reconhecimento</span>
+            <span class="w-6 h-[1px] bg-champagne"></span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-5xl text-graphite font-medium leading-tight">
+            A experiência de quem confia na <span class="italic text-terracotta">naturalidade</span>.
+          </h2>
+        </div>
+
+        <!-- Testimonials Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-24">
+          
+          <div class="bg-ivory p-7 sm:p-8 rounded-3xl border border-sand/70 shadow-card-soft flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center gap-1 text-champagne" aria-label="Avaliação 5 estrelas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="font-serif italic text-xl text-graphite leading-relaxed">
+                “Meu maior receio era ficar com o rosto artificial. A Dra. Helena teve uma paciência incrível na avaliação, explicou cada detalhe e o resultado ficou tão natural que todos dizem que estou descansada e iluminada.”
+              </p>
+            </div>
+            <div class="pt-4 border-t border-sand/50 flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-graphite">Mariana A.</p>
+                <p class="text-xs text-graphite-muted">Bioestimulador & Qualidade de Pele</p>
+              </div>
+              <span class="text-[10px] uppercase tracking-widest text-champagne-dark font-semibold">São José dos Campos</span>
+            </div>
+          </div>
+
+          <div class="bg-ivory p-7 sm:p-8 rounded-3xl border border-sand/70 shadow-card-soft flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center gap-1 text-champagne" aria-label="Avaliação 5 estrelas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="font-serif italic text-xl text-graphite leading-relaxed">
+                “O olhar integrativo dela faz toda a diferença! Ela não olha apenas para o procedimento isolado, mas para como nossa saúde e vitaminas influenciam no colágeno e na celulite. Atendimento impecável.”
+              </p>
+            </div>
+            <div class="pt-4 border-t border-sand/50 flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-graphite">Fernanda C.</p>
+                <p class="text-xs text-graphite-muted">Protocolo Corporal Integrativo</p>
+              </div>
+              <span class="text-[10px] uppercase tracking-widest text-champagne-dark font-semibold">Jd. das Colinas</span>
+            </div>
+          </div>
+
+          <div class="bg-ivory p-7 sm:p-8 rounded-3xl border border-sand/70 shadow-card-soft flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center gap-1 text-champagne" aria-label="Avaliação 5 estrelas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p class="font-serif italic text-xl text-graphite leading-relaxed">
+                “Desde o planejamento com o iPad até o pós-procedimento pelo WhatsApp, me senti acolhida e segura. Minha pele ganhou um viço e firmeza que eu não via há anos.”
+              </p>
+            </div>
+            <div class="pt-4 border-t border-sand/50 flex items-center justify-between">
+              <div>
+                <p class="text-sm font-semibold text-graphite">Carolina S.</p>
+                <p class="text-xs text-graphite-muted">Harmonização & Gerenciamento Dérmico</p>
+              </div>
+              <span class="text-[10px] uppercase tracking-widest text-champagne-dark font-semibold">São José dos Campos</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="max-w-4xl mx-auto bg-ivory rounded-3xl p-6 sm:p-12 border border-sand/80 shadow-card-soft">
+          <div class="text-center space-y-2 mb-8">
+            <span class="text-xs uppercase tracking-[0.2em] text-champagne-dark font-semibold">Perguntas Frequentes</span>
+            <h3 class="font-serif text-2xl sm:text-4xl text-graphite font-medium">Esclarecimentos Clínicos</h3>
+          </div>
+
+          <div class="divide-y divide-sand/70">
+            <details class="group py-4">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-serif text-xl text-graphite font-medium">
+                <span>Como funciona a primeira consulta de avaliação?</span>
+                <span class="ml-4 w-7 h-7 rounded-full border border-sand flex items-center justify-center text-champagne-dark group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p class="text-sm text-graphite-soft leading-relaxed mt-3 pr-8">
+                Na consulta inicial realizamos uma anamnese integrativa completa, analisando sua queixa principal, histórico biológico e anatomia facial ou corporal. A partir desse diagnóstico, desenhamos um plano de tratamento individualizado com total transparência de etapas e prazos.
+              </p>
+            </details>
+
+            <details class="group py-4">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-serif text-xl text-graphite font-medium">
+                <span>Os procedimentos deixam o rosto com aspecto artificial?</span>
+                <span class="ml-4 w-7 h-7 rounded-full border border-sand flex items-center justify-center text-champagne-dark group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p class="text-sm text-graphite-soft leading-relaxed mt-3 pr-8">
+                Não. A filosofia da Dra. Helena Sebin é pautada na naturalidade e na preservação das suas características únicas. Utilizamos quantidades estratégicas e produtos reológicos de alta adaptação tecidual para rejuvenescer sem exageros.
+              </p>
+            </details>
+
+            <details class="group py-4">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-serif text-xl text-graphite font-medium">
+                <span>O que significa a abordagem integrativa “de dentro para fora”?</span>
+                <span class="ml-4 w-7 h-7 rounded-full border border-sand flex items-center justify-center text-champagne-dark group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p class="text-sm text-graphite-soft leading-relaxed mt-3 pr-8">
+                Significa olhar para o paciente como um todo. Para que um bioestimulador de colágeno ou tratamento para celulite/gordura localizada tenha resultado superior, avaliamos fatores inflamatórios, hidratação e aporte de micronutrientes que sustentam a regeneração do tecido.
+              </p>
+            </details>
+
+            <details class="group py-4">
+              <summary class="flex items-center justify-between cursor-pointer list-none font-serif text-xl text-graphite font-medium">
+                <span>Onde fica localizado o consultório e como agendar?</span>
+                <span class="ml-4 w-7 h-7 rounded-full border border-sand flex items-center justify-center text-champagne-dark group-open:rotate-45 transition-transform">+</span>
+              </summary>
+              <p class="text-sm text-graphite-soft leading-relaxed mt-3 pr-8">
+                O atendimento é realizado com hora marcada no Helbor Offices Jardim das Colinas, em São José dos Campos — SP. Você pode iniciar seu agendamento clicando em qualquer botão “Agendar Consulta” desta página.
+              </p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== 8. CALL-TO-ACTION EDITORIAL BANNER ==================== -->
+    <section class="py-20 lg:py-24 bg-ivory relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="rounded-[2.25rem] bg-gradient-to-br from-graphite via-graphite to-[#2B241E] text-ivory p-8 sm:p-14 lg:p-16 shadow-editorial relative overflow-hidden border border-champagne/40">
+          <div class="pointer-events-none absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-champagne/20 blur-3xl"></div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            <div class="lg:col-span-8 space-y-5">
+              <span class="inline-block text-xs uppercase tracking-[0.24em] text-champagne-light font-semibold">
+                Atendimento Exclusivo com Hora Marcada
+              </span>
+              <h2 class="font-serif text-3xl sm:text-5xl font-medium leading-tight">
+                Pronta para cuidar da sua pele com <span class="italic text-champagne-light">ciência, leveza e sofisticação</span>?
+              </h2>
+              <p class="text-ivory/80 text-sm sm:text-base max-w-2xl leading-relaxed">
+                Agende sua avaliação individualizada com a Dra. Helena Sebin e descubra o protocolo ideal para realçar sua beleza natural.
+              </p>
+              <div class="pt-2 flex flex-wrap items-center gap-4">
+                <button
+                  type="button"
+                  onclick="openBookingModal('Agendamento Direto - Banner Final')"
+                  class="btn-sheen inline-flex items-center gap-3 bg-champagne hover:bg-champagne-dark text-white px-8 py-4 rounded-full text-xs sm:text-sm uppercase tracking-[0.18em] font-semibold shadow-gold-glow"
+                >
+                  <span>Agendar Minha Consulta</span>
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </button>
+                <a
+                  href="https://linktr.ee/drahelenasebin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-white/25 hover:border-champagne-light text-ivory text-xs uppercase tracking-[0.16em] font-medium transition-colors"
+                >
+                  <span>Canal Oficial de Agendamentos</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex justify-center">
+              <div class="w-48 sm:w-56 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-champagne/50 shadow-2xl">
+                <img
+                  src="Fotos/IMG_8590.JPG.jpeg"
+                  alt="Dra. Helena Sebin sorrindo"
+                  loading="lazy"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-graphite text-ivory border-t border-white/10 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Column -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full border border-champagne bg-white/5 flex items-center justify-center font-serif text-lg font-semibold text-champagne-light">
+              HS
+            </div>
+            <div>
+              <p class="font-serif text-2xl font-medium text-ivory leading-none">Dra. Helena Sebin</p>
+              <p class="text-[11px] uppercase tracking-[0.22em] text-champagne-light mt-1">Biomédica Esteta • CRBM 71848</p>
+            </div>
+          </div>
+          <p class="text-sm text-ivory/70 max-w-sm leading-relaxed">
+            Biomedicina Estética Facial e Corporal com visão integrativa. Realçando sua beleza natural com ciência, segurança e sofisticação.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="md:col-span-3 space-y-3">
+          <p class="text-xs uppercase tracking-[0.2em] text-champagne-light font-semibold">Navegação</p>
+          <ul class="space-y-2 text-sm text-ivory/75">
+            <li><a href="#sobre" class="hover:text-champagne-light transition-colors">Sobre a Especialista</a></li>
+            <li><a href="#tratamentos" class="hover:text-champagne-light transition-colors">Tratamentos & Protocolos</a></li>
+            <li><a href="#metodologia" class="hover:text-champagne-light transition-colors">Linha do Cuidado</a></li>
+            <li><a href="#filosofia" class="hover:text-champagne-light transition-colors">Filosofia de Atendimento</a></li>
+            <li><a href="#galeria" class="hover:text-champagne-light transition-colors">Portfólio Visual</a></li>
+          </ul>
+        </div>
+
+        <!-- Location & Direct Channels -->
+        <div class="md:col-span-4 space-y-3">
+          <p class="text-xs uppercase tracking-[0.2em] text-champagne-light font-semibold">Atendimento & Contato</p>
+          <p class="text-sm text-ivory/80 leading-relaxed">
+            <strong class="text-ivory font-medium">Helbor Offices Jardim das Colinas</strong><br />
+            São José dos Campos — SP<br />
+            <span class="text-xs text-ivory/60">Atendimento mediante agendamento prévio</span>
+          </p>
+          <div class="pt-2 flex flex-wrap gap-3">
+            <a
+              href="https://www.instagram.com/drahelenasebin/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-champagne text-ivory text-xs tracking-wider transition-colors"
+            >
+              <span>Instagram @drahelenasebin</span>
+            </a>
+            <a
+              href="https://linktr.ee/drahelenasebin"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-champagne text-ivory text-xs tracking-wider transition-colors"
+            >
+              <span>Linktree / WhatsApp Oficial</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ivory/50">
+        <p>© 2026 Dra. Helena Sebin — Biomédica Esteta (CRBM 71848). Todos os direitos reservados.</p>
+        <p>Os resultados podem variar de acordo com a avaliação biológica individual de cada paciente.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING QUICK-ACTION BUTTON ==================== -->
+  <button
+    type="button"
+    onclick="openBookingModal('Atendimento Rápido via Botão Flutuante')"
+    aria-label="Agendar consulta com a Dra. Helena Sebin"
+    class="fixed bottom-6 right-6 z-40 btn-sheen flex items-center gap-3 bg-graphite hover:bg-champagne-dark text-ivory pl-4 pr-5 py-3.5 rounded-full shadow-editorial border border-champagne/50 group"
+  >
+    <span class="w-8 h-8 rounded-full bg-champagne/20 border border-champagne flex items-center justify-center text-champagne-light">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    </span>
+    <div class="text-left">
+      <span class="block text-[10px] uppercase tracking-[0.18em] text-champagne-light leading-none">Agendamento</span>
+      <span class="block text-xs font-semibold tracking-wide mt-0.5">Falar com Consultório</span>
+    </div>
+  </button>
+
+  <!-- ==================== INTERACTIVE BOOKING MODAL (100% STATIC / NO BACKEND) ==================== -->
+  <div
+    id="booking-modal"
+    class="fixed inset-0 z-[80] hidden items-center justify-center p-4 bg-graphite/70 backdrop-blur-md"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="booking-modal-title"
+  >
+    <div class="bg-ivory border border-sand rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-editorial relative animate-fadeIn" data-lenis-prevent>
+      <button
+        type="button"
+        onclick="closeBookingModal()"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-pearl hover:bg-nude text-graphite flex items-center justify-center transition-colors"
+        aria-label="Fechar janela de agendamento"
+      >
+        ✕
+      </button>
+
+      <div class="space-y-2 pr-8">
+        <span class="text-[11px] uppercase tracking-[0.2em] text-champagne-dark font-semibold">Concierge de Agendamento</span>
+        <h3 id="booking-modal-title" class="font-serif text-2xl sm:text-3xl text-graphite font-semibold">
+          Agendar Avaliação Individualizada
+        </h3>
+        <p class="text-xs sm:text-sm text-graphite-soft">
+          Personalize sua solicitação abaixo para gerarmos sua mensagem pronta ou acesse diretamente o canal oficial da Dra. Helena Sebin.
+        </p>
+      </div>
+
+      <form id="booking-form" onsubmit="handleStaticBooking(event)" class="space-y-4 mt-6">
+        <div>
+          <label for="patient-name" class="block text-xs uppercase tracking-wider text-graphite-soft font-semibold mb-1.5">Seu Nome</label>
+          <input
+            id="patient-name"
+            type="text"
+            required
+            placeholder="Ex.: Ana Beatriz"
+            class="w-full px-4 py-3 rounded-xl bg-white border border-sand text-sm text-graphite focus:border-champagne"
+          />
+        </div>
+
+        <div>
+          <label for="patient-interest" class="block text-xs uppercase tracking-wider text-graphite-soft font-semibold mb-1.5">Interesse Principal</label>
+          <select
+            id="patient-interest"
+            class="w-full px-4 py-3 rounded-xl bg-white border border-sand text-sm text-graphite focus:border-champagne"
+          >
+            <option value="Avaliação Clínica Individualizada">Avaliação Clínica Individualizada (Geral)</option>
+            <option value="Harmonização & Preenchedores (Ácido Hialurônico)">Harmonização & Preenchedores (Ácido Hialurônico)</option>
+            <option value="Bioestimuladores de Colágeno & Rejuvenescimento">Bioestimuladores de Colágeno & Rejuvenescimento</option>
+            <option value="Toxina Botulínica Preventiva">Toxina Botulínica Preventiva</option>
+            <option value="Protocolos de Qualidade de Pele & Peelings">Protocolos de Qualidade de Pele & Peelings</option>
+            <option value="Harmonização Corporal & Estética Integrativa">Harmonização Corporal & Estética Integrativa</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="patient-period" class="block text-xs uppercase tracking-wider text-graphite-soft font-semibold mb-1.5">Período de Preferência</label>
+          <select
+            id="patient-period"
+            class="w-full px-4 py-3 rounded-xl bg-white border border-sand text-sm text-graphite focus:border-champagne"
+          >
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Final de tarde / Flexível">Final de tarde / Flexível</option>
+          </select>
+        </div>
+
+        <!-- Generated Preview Box -->
+        <div class="p-3.5 rounded-xl bg-pearl/80 border border-sand/80 text-xs text-graphite-soft space-y-1">
+          <div class="flex items-center justify-between">
+            <span class="font-semibold text-graphite">Mensagem Pronta de Atendimento:</span>
+            <button type="button" onclick="copyBookingMessage()" id="copy-msg-btn" class="text-[11px] text-champagne-dark font-semibold hover:underline">
+              Copiar texto
+            </button>
+          </div>
+          <p id="booking-preview-text" class="italic text-graphite-muted leading-relaxed">
+            "Olá, Dra. Helena! Gostaria de agendar uma Avaliação Clínica Individualizada."
+          </p>
+        </div>
+
+        <div class="pt-2 flex flex-col sm:flex-row gap-3">
+          <button
+            type="submit"
+            class="btn-sheen flex-1 py-3.5 px-5 rounded-full bg-graphite hover:bg-champagne-dark text-ivory text-xs uppercase tracking-[0.16em] font-semibold text-center"
+          >
+            Continuar para Agendamento Oficial
+          </button>
+          <a
+            href="https://www.instagram.com/drahelenasebin/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="py-3.5 px-5 rounded-full border border-sand hover:border-champagne text-graphite text-xs uppercase tracking-[0.14em] font-semibold text-center"
+          >
+            Direct @drahelenasebin
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== PROTOCOL CLINICAL DETAILS MODAL ==================== -->
+  <div
+    id="protocol-modal"
+    class="fixed inset-0 z-[80] hidden items-center justify-center p-4 bg-graphite/70 backdrop-blur-md"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="protocol-modal-title"
+  >
+    <div class="bg-ivory border border-sand rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-editorial relative" data-lenis-prevent>
+      <button
+        type="button"
+        onclick="closeProtocolModal()"
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-pearl hover:bg-nude text-graphite flex items-center justify-center transition-colors"
+        aria-label="Fechar detalhes do protocolo"
+      >
+        ✕
+      </button>
+
+      <span id="protocol-modal-tag" class="text-[11px] uppercase tracking-[0.2em] text-champagne-dark font-semibold">Especificação Clínica</span>
+      <h3 id="protocol-modal-title" class="font-serif text-2xl sm:text-3xl text-graphite font-semibold mt-1"></h3>
+      <p id="protocol-modal-desc" class="text-sm text-graphite-soft leading-relaxed mt-3"></p>
+
+      <div class="mt-5 p-4 rounded-2xl bg-pearl border border-sand/70 space-y-2">
+        <p class="text-xs uppercase tracking-[0.16em] text-graphite font-semibold">Indicações Principais:</p>
+        <ul id="protocol-modal-list" class="text-xs text-graphite-soft space-y-1.5 list-disc list-inside"></ul>
+      </div>
+
+      <div class="mt-6 flex justify-end gap-3">
+        <button
+          type="button"
+          onclick="closeProtocolModal()"
+          class="px-5 py-2.5 rounded-full border border-sand text-xs uppercase tracking-wider font-semibold text-graphite-soft"
+        >
+          Fechar
+        </button>
+        <button
+          id="protocol-modal-cta"
+          type="button"
+          class="btn-sheen px-6 py-2.5 rounded-full bg-graphite text-ivory text-xs uppercase tracking-[0.16em] font-semibold"
+        >
+          Agendar Este Protocolo
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== LIGHTBOX MODAL FOR GALLERY ==================== -->
+  <div
+    id="lightbox-modal"
+    onclick="closeLightbox()"
+    class="fixed inset-0 z-[90] hidden items-center justify-center p-4 bg-graphite/90 backdrop-blur-md cursor-zoom-out"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Visualização ampliada da imagem"
+  >
+    <div class="max-w-lg w-full space-y-3" onclick="event.stopPropagation()">
+      <div class="rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-graphite">
+        <img id="lightbox-img" src="Fotos/IMG_8596.JPG.jpeg" alt="Imagem ampliada do portfólio da Dra. Helena Sebin" class="w-full max-h-[78vh] object-contain mx-auto" />
+      </div>
+      <div class="flex items-center justify-between text-ivory px-1">
+        <p id="lightbox-caption" class="font-serif text-lg"></p>
+        <button type="button" onclick="closeLightbox()" class="text-xs uppercase tracking-widest text-champagne-light hover:underline">Fechar ✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SCRIPTS: LENIS + GSAP + SCROLLTRIGGER & INTERACTIONS ==================== -->
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    // 1. Initialize Lenis Smooth Scroll (with safe fallback)
+    let lenisInstance = null;
+    if (typeof Lenis !== 'undefined') {
+      lenisInstance = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+
+      function raf(time) {
+        lenisInstance.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        lenisInstance.on('scroll', ScrollTrigger.update);
+      }
+    }
+
+    // Smooth anchor navigation with Lenis
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId.length > 1) {
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            closeMobileMenu();
+            if (lenisInstance) {
+              lenisInstance.scrollTo(targetEl, { offset: -80 });
+            } else {
+              targetEl.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        }
+      });
+    });
+
+    // 2. Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      menuIconOpen.classList.remove('hidden');
+      menuIconClose.classList.add('hidden');
+      mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        closeMobileMenu();
+      }
+    });
+
+    // 3. Scroll Progress Bar & Header Shrink
+    const scrollProgress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgress.style.width = scrolled + '%';
+    }, { passive: true });
+
+    // 4. Custom Refined Cursor (Desktop Only)
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+    if (window.matchMedia('(pointer: fine)').matches) {
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let ringX = mouseX;
+      let ringY = mouseY;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+      }, { passive: true });
+
+      function animateCursorRing() {
+        ringX += (mouseX - ringX) * 0.18;
+        ringY += (mouseY - ringY) * 0.18;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+        requestAnimationFrame(animateCursorRing);
+      }
+      requestAnimationFrame(animateCursorRing);
+
+      document.querySelectorAll('a, button, summary, figure, input, select').forEach((el) => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+      });
+    }
+
+    // 5. GSAP + ScrollTrigger Scrollytelling Animations
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Progressive Reveal
+        gsap.from('.hero-reveal', {
+          y: 28,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.14,
+          ease: 'power3.out',
+          delay: 0.1
+        });
+
+        gsap.from('.hero-image-card', {
+          scale: 0.95,
+          opacity: 0,
+          duration: 1.25,
+          ease: 'power3.out',
+          delay: 0.25
+        });
+
+        // Hero Image Subtle Parallax
+        gsap.to('#hero-parallax-img', {
+          yPercent: 10,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+
+        gsap.to('#hero-floating-badge', {
+          y: -24,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+
+        // Section Reveal-Up Elements
+        gsap.utils.toArray('.reveal-up').forEach((elem) => {
+          gsap.from(elem, {
+            y: 36,
+            opacity: 0,
+            duration: 0.9,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: elem,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            }
+          });
+        });
+
+        // Pinned Treatment Navigation Highlighting on Scroll
+        const treatmentCards = document.querySelectorAll('.treatment-card');
+        const navItems = document.querySelectorAll('.treatment-nav-item');
+
+        treatmentCards.forEach((card) => {
+          ScrollTrigger.create({
+            trigger: card,
+            start: 'top 55%',
+            end: 'bottom 55%',
+            onEnter: () => setActiveTreatmentNav(card.id),
+            onEnterBack: () => setActiveTreatmentNav(card.id),
+          });
+        });
+
+        function setActiveTreatmentNav(activeId) {
+          navItems.forEach((item) => {
+            if (item.getAttribute('data-target') === activeId) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+
+        // Care Line / Methodology Scrollytelling Timeline Draw
+        const timelineContainer = document.getElementById('care-timeline-container');
+        const timelineProgressLine = document.getElementById('timeline-progress-line');
+        const timelineSteps = document.querySelectorAll('.timeline-step');
+
+        if (timelineContainer && timelineProgressLine) {
+          gsap.to(timelineProgressLine, {
+            height: '88%',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: timelineContainer,
+              start: 'top 65%',
+              end: 'bottom 65%',
+              scrub: 0.4
+            }
+          });
+
+          timelineSteps.forEach((step) => {
+            ScrollTrigger.create({
+              trigger: step,
+              start: 'top 68%',
+              onEnter: () => step.classList.add('is-active'),
+              onLeaveBack: () => {
+                if (step !== timelineSteps[0]) {
+                  step.classList.remove('is-active');
+                }
+              }
+            });
+          });
+        }
+      }
+    });
+
+    // 6. Gallery Filtering & Lightbox
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.gallery-filter-btn');
+
+      buttons.forEach((btn) => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('bg-graphite', 'text-ivory');
+          btn.classList.remove('bg-pearl', 'text-graphite-soft');
+        } else {
+          btn.classList.remove('bg-graphite', 'text-ivory');
+          btn.classList.add('bg-pearl', 'text-graphite-soft');
+        }
+      });
+
+      items.forEach((item) => {
+        const itemCat = item.getAttribute('data-category');
+        if (category === 'all' || itemCat === category) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 7. Protocol Details Modal Data
+    const protocolDetails = {
+      preenchedores: {
+        title: 'Harmonização Facial, Labial & Preenchedores',
+        desc: 'Protocolo realizado com géis de ácido hialurônico reticulado de alta pureza (Rennova Fill Hyaluronic), respeitando os compartimentos de gordura e os ligamentos faciais para restaurar suporte sem pesar na expressão.',
+        items: [
+          'Preenchimento e hidratação labial com desenho natural do arco do cupido',
+          'Estruturação zigomática (malar), mento e contorno mandibular suave',
+          'Suavização de sulco nasogeniano e olheiras profundas',
+          'Associação estratégica com Toxina Botulínica preventiva'
+        ]
+      },
+      bioestimuladores: {
+        title: 'Bioestimuladores de Colágeno & Longevidade',
+        desc: 'Os bioestimuladores atuam estimulando os fibroblastos a produzirem novas fibras de colágeno tipo I e III. Na visão integrativa da Dra. Helena, preparamos o metabolismo para potencializar a resposta regenerativa.',
+        items: [
+          'Restauração da espessura dérmica e efeito lifting gradual',
+          'Prevenção do derretimento facial a partir dos 25–30 anos',
+          'Aplicação facial, pescoço, colo e áreas corporais com flacidez',
+          'Resultados duradouros com evolução progressiva em 30 a 90 dias'
+        ]
+      },
+      pele: {
+        title: 'Qualidade de Pele, Peelings & Limpeza Clínica',
+        desc: 'Gerenciamento completo da saúde cutânea para conquistar uma pele luminosa, uniforme e com barreira íntegra o ano inteiro.',
+        items: [
+          'Peelings químicos personalizados para manchas, melasma e textura irregular',
+          'Limpeza de pele clínica profunda com ativos calmantes e antioxidantes',
+          'Controle de oleosidade, acne da mulher adulta e poros dilatados',
+          'Prescrição de rotina dermoestética individualizada'
+        ]
+      },
+      corporal: {
+        title: 'Harmonização Corporal & Estética Integrativa',
+        desc: 'Tratamento da estética corporal compreendendo a fisiologia do tecido adiposo, retenção hídrica e processos inflamatórios.',
+        items: [
+          'Tratamento integrativo da celulite sob ótica anti-inflamatória',
+          'Protocolos para gordura localizada e contorno corporal',
+          'Bioestimuladores corporais para firmeza de glúteos, abdômen e braços',
+          'Avaliação individualizada com acompanhamento de evolução'
+        ]
+      }
+    };
+
+    function openProtocolDetail(key) {
+      const data = protocolDetails[key];
+      if (!data) return;
+      document.getElementById('protocol-modal-title').textContent = data.title;
+      document.getElementById('protocol-modal-desc').textContent = data.desc;
+      const listEl = document.getElementById('protocol-modal-list');
+      listEl.innerHTML = data.items.map((i) => `<li>${i}</li>`).join('');
+      const ctaBtn = document.getElementById('protocol-modal-cta');
+      ctaBtn.onclick = () => {
+        closeProtocolModal();
+        openBookingModal(data.title);
+      };
+      const modal = document.getElementById('protocol-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProtocolModal() {
+      const modal = document.getElementById('protocol-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // 8. Static Booking Concierge Modal
+    const bookingModal = document.getElementById('booking-modal');
+    const patientNameInput = document.getElementById('patient-name');
+    const patientInterestSelect = document.getElementById('patient-interest');
+    const patientPeriodSelect = document.getElementById('patient-period');
+    const bookingPreviewText = document.getElementById('booking-preview-text');
+
+    function updateBookingPreview() {
+      const name = patientNameInput.value.trim() || 'Paciente';
+      const interest = patientInterestSelect.value;
+      const period = patientPeriodSelect.value;
+      bookingPreviewText.textContent = `Olá, Dra. Helena! Meu nome é ${name}. Gostaria de agendar uma consulta para ${interest} (preferência de horário: ${period}).`;
+    }
+
+    patientNameInput.addEventListener('input', updateBookingPreview);
+    patientInterestSelect.addEventListener('change', updateBookingPreview);
+    patientPeriodSelect.addEventListener('change', updateBookingPreview);
+
+    function openBookingModal(defaultInterest) {
+      if (defaultInterest) {
+        const options = Array.from(patientInterestSelect.options);
+        const match = options.find((opt) => opt.value.toLowerCase().includes(defaultInterest.toLowerCase().slice(0, 12)));
+        if (match) {
+          patientInterestSelect.value = match.value;
+        }
+      }
+      updateBookingPreview();
+      bookingModal.classList.remove('hidden');
+      bookingModal.classList.add('flex');
+    }
+
+    function closeBookingModal() {
+      bookingModal.classList.add('hidden');
+      bookingModal.classList.remove('flex');
+    }
+
+    function copyBookingMessage() {
+      const text = bookingPreviewText.textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+        const btn = document.getElementById('copy-msg-btn');
+        btn.textContent = 'Copiado ✓';
+        setTimeout(() => { btn.textContent = 'Copiar texto'; }, 2000);
+      }
+    }
+
+    function handleStaticBooking(event) {
+      event.preventDefault();
+      copyBookingMessage();
+      window.open('https://linktr.ee/drahelenasebin', '_blank', 'noopener,noreferrer');
+      closeBookingModal();
+    }
+
+    // Close modals with Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeBookingModal();
+        closeProtocolModal();
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
+
