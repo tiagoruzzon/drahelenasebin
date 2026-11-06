@@ -8,8 +8,9 @@
   <meta name="theme-color" content="#FAF7F2" />
 
   <!-- Favicon configurado a partir da pasta /Fotos -->
-  <link rel="icon" type="image/jpeg" href="Fotos/logotipo.jpeg" />
-  <link rel="apple-touch-icon" href="Fotos/logotipo.jpeg" />
+  <link rel="icon" type="image/webp" href="Fotos/logotipo.webp" />
+  <link rel="apple-touch-icon" href="Fotos/logotipo.webp" />
+  <link rel="preload" as="image" href="Fotos/IMG_8596.webp" type="image/webp" fetchpriority="high" />
 
   <!-- Google Fonts: Editorial Serif (Cormorant Garamond) + Refined Sans (Plus Jakarta Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -269,12 +270,15 @@
   <!-- ==================== HEADER / NAVBAR ==================== -->
   <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500 glass-nav border-b border-sand/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <!-- Brand Logo (Using Fotos/logotipo.jpeg) -->
+      <!-- Brand Logo (Using Fotos/logotipo.webp) -->
       <a href="#hero" class="group flex items-center gap-3.5 focus:outline-none" aria-label="Dra. Helena Sebin - Início">
         <div class="w-12 h-12 rounded-full border border-champagne/50 bg-ivory overflow-hidden flex items-center justify-center shadow-sm group-hover:border-champagne transition-colors">
           <img
-            src="Fotos/logotipo.jpeg"
+            src="Fotos/logotipo.webp"
             alt="Logotipo Dra. Helena Sebin"
+            width="440"
+            height="240"
+            decoding="async"
             class="w-full h-full object-cover object-center scale-150"
           />
         </div>
@@ -502,8 +506,12 @@
             <div class="hero-image-card relative aspect-[3/4] w-full max-w-md mx-auto rounded-t-[150px] rounded-b-2xl overflow-hidden shadow-editorial border border-white/80 bg-pearl">
               <img
                 id="hero-parallax-img"
-                src="Fotos/IMG_8596.JPG.jpeg"
+                src="Fotos/IMG_8596.webp"
                 alt="Retrato profissional da Dra. Helena Sebin, Biomédica Esteta"
+                width="900"
+                height="1350"
+                fetchpriority="high"
+                decoding="async"
                 class="w-full h-[112%] object-cover object-top -mt-4"
               />
               <!-- Subtle Gradient Vignette -->
@@ -527,8 +535,11 @@
               class="hidden sm:flex items-center gap-3.5 absolute -bottom-6 -left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-2xl shadow-editorial border border-sand/60 max-w-[275px]"
             >
               <img
-                src="Fotos/IMG_8621.JPG.jpeg"
+                src="Fotos/IMG_8621.webp"
                 alt="Dra. Helena realizando diagnóstico clínico detalhado"
+                width="168"
+                height="252"
+                decoding="async"
                 class="w-14 h-16 rounded-xl object-cover flex-shrink-0"
               />
               <div>
@@ -577,9 +588,12 @@
               <!-- Primary Portrait -->
               <div class="col-span-7 editorial-img-wrap rounded-2xl shadow-editorial border border-sand/60 aspect-[3/4] bg-pearl relative">
                 <img
-                  src="Fotos/IMG_8595.JPG.jpeg"
+                  src="Fotos/IMG_8595.webp"
                   alt="Dra. Helena Sebin contemplando o espaço clínico"
+                  width="720"
+                  height="1080"
                   loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover"
                 />
               </div>
@@ -588,9 +602,12 @@
               <div class="col-span-5 space-y-4">
                 <div class="editorial-img-wrap rounded-2xl shadow-card-soft border border-sand/60 aspect-[3/4] bg-pearl">
                   <img
-                    src="Fotos/IMG_8590.JPG.jpeg"
+                    src="Fotos/IMG_8590.webp"
                     alt="Dra. Helena Sebin sorrindo com acolhimento"
+                    width="540"
+                    height="810"
                     loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover"
                   />
                 </div>
@@ -727,9 +744,12 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
               <div class="editorial-img-wrap rounded-3xl overflow-hidden border border-white/15 aspect-[3/4] shadow-2xl relative">
                 <img
-                  src="Fotos/IMG_8616.JPG.jpeg"
+                  src="Fotos/IMG_8616.webp"
                   alt="Dra. Helena Sebin preparando protocolo facial avançado"
+                  width="720"
+                  height="1080"
                   loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover"
                 />
                 <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-graphite/90 via-graphite/40 to-transparent">
@@ -740,9 +760,12 @@
               <div class="space-y-6">
                 <div class="editorial-img-wrap rounded-3xl overflow-hidden border border-white/15 aspect-[3/4] shadow-2xl relative">
                   <img
-                    src="Fotos/IMG_8599.JPG.jpeg"
+                    src="Fotos/IMG_8599.webp"
                     alt="Dra. Helena Sebin com Rennova Fill Hyaluronic para harmonização corporal"
+                    width="720"
+                    height="1080"
                     loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover"
                   />
                   <div class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-graphite/90 via-graphite/40 to-transparent">
@@ -846,9 +869,12 @@
               <div class="grid grid-cols-1 md:grid-cols-12">
                 <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
                   <img
-                    src="Fotos/IMG_8609.JPG.jpeg"
+                    src="Fotos/IMG_8609.webp"
                     alt="Dra. Helena Sebin preparando protocolo facial avançado com pincéis e ativos"
+                    width="720"
+                    height="1080"
                     loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover"
                   />
                   <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/85 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
@@ -911,9 +937,12 @@
               <div class="grid grid-cols-1 md:grid-cols-12">
                 <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
                   <img
-                    src="Fotos/IMG_8600.JPG.jpeg"
+                    src="Fotos/IMG_8600.webp"
                     alt="Dra. Helena Sebin apresentando Rennova Fill Hyaluronic para Harmonização de Glúteos"
+                    width="720"
+                    height="1080"
                     loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover"
                   />
                   <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/85 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
@@ -976,9 +1005,12 @@
               <div class="grid grid-cols-1 md:grid-cols-12">
                 <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
                   <img
-                    src="Fotos/IMG_8622.JPG.jpeg"
+                    src="Fotos/IMG_8622.webp"
                     alt="Dra. Helena Sebin em planejamento clínico abdominal e corporal"
+                    width="720"
+                    height="1080"
                     loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover"
                   />
                   <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/85 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
@@ -1041,9 +1073,12 @@
               <div class="grid grid-cols-1 md:grid-cols-12">
                 <div class="md:col-span-5 editorial-img-wrap aspect-[3/4] md:aspect-auto relative bg-nude">
                   <img
-                    src="Fotos/IMG_8613.JPG.jpeg"
+                    src="Fotos/IMG_8613.webp"
                     alt="Dra. Helena Sebin preparando protocolo regenerador para celulite e estrias"
+                    width="720"
+                    height="1080"
                     loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover"
                   />
                   <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-graphite/85 backdrop-blur-md text-ivory text-[10px] uppercase tracking-[0.2em]">
@@ -1175,9 +1210,12 @@
             <div class="lg:col-span-5">
               <div class="relative rounded-3xl overflow-hidden border border-sand shadow-editorial aspect-[4/5] bg-graphite">
                 <img
-                  src="Fotos/IMG_8620.JPG.jpeg"
+                  src="Fotos/IMG_8620.webp"
                   alt="Dra. Helena Sebin analisando diagnóstico digital da pele"
+                  width="800"
+                  height="1200"
                   loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover opacity-90"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-graphite/90 via-graphite/20 to-transparent"></div>
@@ -1216,9 +1254,12 @@
             <div class="pt-4">
               <div class="editorial-img-wrap rounded-2xl overflow-hidden border border-sand/70 aspect-[4/3] shadow-card-soft">
                 <img
-                  src="Fotos/IMG_8624.JPG.jpeg"
+                  src="Fotos/IMG_8624.webp"
                   alt="Dra. Helena Sebin durante planejamento clínico personalizado"
+                  width="800"
+                  height="1200"
                   loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover"
                 />
               </div>
@@ -1305,64 +1346,64 @@
         <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           
           <!-- Item 1 -->
-          <figure data-category="corporal" onclick="openLightbox('Fotos/IMG_8605.JPG.jpeg', 'Harmonização de Glúteos — Associação de Bioestimulador e Rennova Fill Hyaluronic')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8605.JPG.jpeg" alt="Dra. Helena Sebin com Rennova Fill Hyaluronic para harmonização corporal" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="corporal" onclick="openLightbox('Fotos/IMG_8605.webp', 'Harmonização de Glúteos — Associação de Bioestimulador e Rennova Fill Hyaluronic')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8605.webp" alt="Dra. Helena Sebin com Rennova Fill Hyaluronic para harmonização corporal" width="800" height="1199" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Harmonização de Glúteos • Rennova Fill</span>
             </figcaption>
           </figure>
 
           <!-- Item 2 -->
-          <figure data-category="facial" onclick="openLightbox('Fotos/IMG_8611.JPG.jpeg', 'Gerenciamento Facial 100% Avançado — Peelings e Limpeza Profunda')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8611.JPG.jpeg" alt="Protocolo de peeling e gerenciamento facial avançado" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="facial" onclick="openLightbox('Fotos/IMG_8611.webp', 'Gerenciamento Facial 100% Avançado — Peelings e Limpeza Profunda')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8611.webp" alt="Protocolo de peeling e gerenciamento facial avançado" width="800" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Peelings & Gerenciamento Facial</span>
             </figcaption>
           </figure>
 
           <!-- Item 3 -->
-          <figure data-category="consultorio" onclick="openLightbox('Fotos/IMG_8608.JPG.jpeg', 'Dra. Helena Sebin — Atendimento acolhedor e individualizado')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8608.JPG.jpeg" alt="Retrato sorridente da Dra. Helena Sebin" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="consultorio" onclick="openLightbox('Fotos/IMG_8608.webp', 'Dra. Helena Sebin — Atendimento acolhedor e individualizado')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8608.webp" alt="Retrato sorridente da Dra. Helena Sebin" width="800" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Acolhimento & Ciência</span>
             </figcaption>
           </figure>
 
           <!-- Item 4 -->
-          <figure data-category="consultorio" onclick="openLightbox('Fotos/IMG_8625.JPG.jpeg', 'Avaliação Clínica Digital e Diagnóstico Personalizado')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8625.JPG.jpeg" alt="Dra. Helena realizando planejamento digital no consultório" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="consultorio" onclick="openLightbox('Fotos/IMG_8625.webp', 'Avaliação Clínica Digital e Diagnóstico Personalizado')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8625.webp" alt="Dra. Helena realizando planejamento digital no consultório" width="800" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Diagnóstico & Planejamento</span>
             </figcaption>
           </figure>
 
           <!-- Item 5 -->
-          <figure data-category="corporal" onclick="openLightbox('Fotos/IMG_8602.JPG.jpeg', 'Ativos de alta tecnologia para projeção e contorno glúteo')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8602.JPG.jpeg" alt="Apresentação de ativo Rennova Fill Hyaluronic" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="corporal" onclick="openLightbox('Fotos/IMG_8602.webp', 'Ativos de alta tecnologia para projeção e contorno glúteo')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8602.webp" alt="Apresentação de ativo Rennova Fill Hyaluronic" width="800" height="1000" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Ativos Corporais de Alta Performance</span>
             </figcaption>
           </figure>
 
           <!-- Item 6 -->
-          <figure data-category="facial" onclick="openLightbox('Fotos/IMG_8615.JPG.jpeg', 'Preparo de protocolos enzimáticos e químicos para saúde celular da pele')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8615.JPG.jpeg" alt="Dra. Helena preparando protocolo facial em cubeta dourada" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="facial" onclick="openLightbox('Fotos/IMG_8615.webp', 'Preparo de protocolos enzimáticos e químicos para saúde celular da pele')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8615.webp" alt="Dra. Helena preparando protocolo facial em cubeta dourada" width="800" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Saúde Celular & Luminosidade</span>
             </figcaption>
           </figure>
 
           <!-- Item 7 -->
-          <figure data-category="consultorio" onclick="openLightbox('Fotos/IMG_8619.JPG.jpeg', 'Dra. Helena Sebin — Biomédica Esteta CRBM 71848')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8619.JPG.jpeg" alt="Retrato editorial da Dra. Helena no consultório" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="consultorio" onclick="openLightbox('Fotos/IMG_8619.webp', 'Dra. Helena Sebin — Biomédica Esteta CRBM 71848')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8619.webp" alt="Retrato editorial da Dra. Helena no consultório" width="800" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Ambiente Clínico Sofisticado</span>
             </figcaption>
           </figure>
 
           <!-- Item 8 -->
-          <figure data-category="corporal" onclick="openLightbox('Fotos/IMG_8604.JPG.jpeg', 'Remodelamento e volumização glútea segura com bioestimuladores e Rennova Fill')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
-            <img src="Fotos/IMG_8604.JPG.jpeg" alt="Dra. Helena Sebin segurando Rennova Fill Hyaluronic" loading="lazy" class="w-full h-full object-cover" />
+          <figure data-category="corporal" onclick="openLightbox('Fotos/IMG_8604.webp', 'Remodelamento e volumização glútea segura com bioestimuladores e Rennova Fill')" class="gallery-item group cursor-pointer editorial-img-wrap rounded-2xl overflow-hidden border border-sand/60 aspect-[3/4] relative bg-pearl shadow-sm">
+            <img src="Fotos/IMG_8604.webp" alt="Dra. Helena Sebin segurando Rennova Fill Hyaluronic" width="800" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             <figcaption class="absolute inset-0 bg-gradient-to-t from-graphite/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span class="text-xs text-ivory font-medium">Contorno & Sustentação Corporal</span>
             </figcaption>
@@ -1543,9 +1584,12 @@
             <div class="lg:col-span-4 flex justify-center">
               <div class="w-48 sm:w-56 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-champagne/50 shadow-2xl">
                 <img
-                  src="Fotos/IMG_8618.JPG.jpeg"
+                  src="Fotos/IMG_8618.webp"
                   alt="Retrato da Dra. Helena Sebin"
+                  width="480"
+                  height="720"
                   loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover"
                 />
               </div>
@@ -1585,14 +1629,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
         
-        <!-- Brand Column (With Fotos/logotipo.jpeg) -->
+        <!-- Brand Column (With Fotos/logotipo.webp) -->
         <div class="md:col-span-5 space-y-4">
           <div class="flex items-center gap-3.5">
             <div class="w-14 h-14 rounded-full border border-champagne/60 bg-ivory overflow-hidden flex items-center justify-center flex-shrink-0">
               <img
-                src="Fotos/logotipo.jpeg"
+                src="Fotos/logotipo.webp"
                 alt="Logotipo Dra. Helena Sebin"
+                width="440"
+                height="240"
                 loading="lazy"
+                decoding="async"
                 class="w-full h-full object-cover object-center scale-150"
               />
             </div>
@@ -1741,7 +1788,7 @@
   >
     <div class="max-w-lg w-full space-y-3" onclick="event.stopPropagation()">
       <div class="rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-graphite">
-        <img id="lightbox-img" src="Fotos/IMG_8596.JPG.jpeg" alt="Imagem ampliada do portfólio da Dra. Helena Sebin" class="w-full max-h-[78vh] object-contain mx-auto" />
+        <img id="lightbox-img" src="Fotos/IMG_8596.webp" alt="Imagem ampliada do portfólio da Dra. Helena Sebin" width="800" height="1200" loading="lazy" decoding="async" class="w-full max-h-[78vh] object-contain mx-auto" />
       </div>
       <div class="flex items-center justify-between text-ivory px-1">
         <p id="lightbox-caption" class="font-serif text-lg"></p>
