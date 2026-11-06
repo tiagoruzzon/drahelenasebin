@@ -12,6 +12,75 @@
   <link rel="apple-touch-icon" href="Fotos/logotipo.webp" />
   <link rel="preload" as="image" href="Fotos/IMG_8596.webp" type="image/webp" fetchpriority="high" />
 
+  <!-- ==================== GOOGLE ANALYTICS 4 (GA4) + CONSENT MODE V2 (LGPD) ==================== -->
+  <script>
+    window.GA_MEASUREMENT_ID = 'G-GEWML7F7FJ';
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+
+    // 1. Estado padrão (Negado por padrão em conformidade com a LGPD até manifestação do titular)
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+
+    // 2. Carregamento sob demanda do script gtag.js apenas após consentimento (mantém o site leve e rápido)
+    window.gaScriptLoaded = false;
+    window.enableGoogleAnalytics = function () {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+
+      if (!window.GA_MEASUREMENT_ID || window.GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') {
+        return;
+      }
+
+      if (!window.gaScriptLoaded) {
+        window.gaScriptLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(window.GA_MEASUREMENT_ID);
+        document.head.appendChild(s);
+
+        gtag('js', new Date());
+        gtag('config', window.GA_MEASUREMENT_ID, {
+          'anonymize_ip': true,
+          'cookie_flags': 'SameSite=None;Secure'
+        });
+      }
+    };
+
+    window.disableGoogleAnalytics = function () {
+      gtag('consent', 'update', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+
+      // Remove cookies _ga existentes caso o usuário revogue o consentimento
+      document.cookie.split(';').forEach(function (c) {
+        var name = c.split('=')[0].trim();
+        if (name.indexOf('_ga') === 0 || name.indexOf('_gid') === 0 || name.indexOf('_gat') === 0) {
+          document.cookie = name + '=; Max-Age=0; path=/;';
+          document.cookie = name + '=; Max-Age=0; path=/; domain=.' + location.hostname + ';';
+        }
+      });
+    };
+
+    // Verifica se o visitante já consentiu anteriormente
+    try {
+      var savedConsent = JSON.parse(localStorage.getItem('hs_lgpd_consent_v1') || 'null');
+      if (savedConsent && savedConsent.analytics === true) {
+        window.enableGoogleAnalytics();
+      }
+    } catch (e) {}
+  </script>
+
   <!-- Google Fonts: Editorial Serif (Cormorant Garamond) + Refined Sans (Plus Jakarta Sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1706,9 +1775,116 @@
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ivory/50">
         <p>© 2026 Dra. Helena Sebin — Biomédica Esteta (CRBM 71848). Todos os direitos reservados.</p>
         <p>Os resultados podem variar de acordo com a avaliação biológica individual de cada paciente.</p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <button
+            type="button"
+            onclick="openCookieBanner(true)"
+            class="text-champagne-light/85 hover:text-champagne-light underline underline-offset-4 transition-colors"
+          >
+            Preferências de Cookies & Privacidade (LGPD)
+          </button>
+          <span class="hidden sm:inline text-ivory/25">•</span>
+          <p>Os resultados podem variar de acordo com a avaliação biológica individual.</p>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- ==================== LGPD COOKIE CONSENT BANNER & PREFERENCES ==================== -->
+  <div
+    id="lgpd-cookie-banner"
+    role="region"
+    aria-label="Aviso de Privacidade e Cookies (LGPD)"
+    class="fixed bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:max-w-md z-[75] hidden bg-ivory/98 backdrop-blur-xl border border-champagne/50 rounded-3xl p-5 sm:p-6 shadow-editorial text-graphite transition-all duration-300"
+    data-lenis-prevent
+  >
+    <div class="space-y-3.5">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-champagne"></span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-champagne-dark font-semibold">
+            Privacidade & Proteção de Dados (LGPD)
+          </span>
+        </div>
+        <button
+          type="button"
+          onclick="toggleCookieDetails()"
+          id="lgpd-details-btn"
+          class="text-[11px] uppercase tracking-wider font-semibold text-graphite-muted hover:text-champagne-dark underline underline-offset-4 transition-colors"
+        >
+          Configurar
+        </button>
+      </div>
+
+      <p class="font-serif text-xl font-semibold text-graphite leading-snug">
+        Transparência no uso de cookies
+      </p>
+
+      <p class="text-xs text-graphite-soft leading-relaxed">
+        Utilizamos cookies essenciais para o funcionamento do site e, mediante seu consentimento (<strong class="font-semibold text-graphite">Lei nº 13.709/2018 — LGPD</strong>), cookies analíticos do <strong class="font-semibold text-graphite">Google Analytics</strong> para compreender, de forma agregada e anônima, como você interage com nossos conteúdos.
+      </p>
+
+      <!-- Painel Expansível de Preferências Granulares e Direitos LGPD -->
+      <div id="lgpd-cookie-details" class="hidden pt-2 space-y-2.5 border-t border-sand/70 text-xs">
+        <div class="p-3 rounded-2xl bg-pearl/70 border border-sand/60 flex items-start justify-between gap-3">
+          <div>
+            <p class="font-semibold text-graphite">1. Cookies Estritamente Necessários</p>
+            <p class="text-[11px] text-graphite-muted leading-snug mt-0.5">
+              Essenciais para navegação, segurança e registro da sua escolha de privacidade. Não coletam dados pessoais identificáveis.
+            </p>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-sand/50 text-[10px] uppercase tracking-wider font-semibold text-graphite-soft flex-shrink-0">
+            Sempre Ativo
+          </span>
+        </div>
+
+        <label for="lgpd-analytics-toggle" class="p-3 rounded-2xl bg-pearl/70 border border-sand/60 flex items-start justify-between gap-3 cursor-pointer hover:border-champagne/60 transition-colors">
+          <div>
+            <p class="font-semibold text-graphite">2. Cookies Analíticos (Google Analytics 4)</p>
+            <p class="text-[11px] text-graphite-muted leading-snug mt-0.5">
+              Medem visitas, seções mais lidas e cliques de agendamento com anonimização de IP ativada.
+            </p>
+          </div>
+          <input
+            id="lgpd-analytics-toggle"
+            type="checkbox"
+            checked
+            class="mt-1 w-4 h-4 accent-[#8C6B2B] rounded cursor-pointer flex-shrink-0"
+          />
+        </label>
+
+        <p class="text-[11px] text-graphite-muted leading-relaxed px-1">
+          <strong>Direitos do Titular (Art. 18 da LGPD):</strong> Você pode revogar ou alterar sua escolha a qualquer momento clicando em <em>“Preferências de Cookies & Privacidade (LGPD)”</em> no rodapé da página.
+        </p>
+
+        <button
+          type="button"
+          onclick="saveCustomCookiePreferences()"
+          class="w-full py-2.5 rounded-full bg-champagne hover:bg-champagne-dark text-white text-[11px] uppercase tracking-[0.16em] font-semibold transition-colors"
+        >
+          Salvar Minhas Preferências
+        </button>
+      </div>
+
+      <!-- Botões Principais (Mesmo destaque visual conforme diretrizes da ANPD) -->
+      <div class="pt-1 grid grid-cols-2 gap-2.5">
+        <button
+          type="button"
+          onclick="rejectOptionalCookies()"
+          class="py-2.5 px-3 rounded-full border border-graphite/30 hover:border-graphite bg-white/80 hover:bg-white text-graphite text-[11px] uppercase tracking-[0.14em] font-semibold transition-colors"
+        >
+          Apenas Essenciais
+        </button>
+        <button
+          type="button"
+          onclick="acceptAllCookies()"
+          class="btn-sheen py-2.5 px-3 rounded-full bg-graphite hover:bg-champagne-dark text-ivory text-[11px] uppercase tracking-[0.14em] font-semibold transition-colors"
+        >
+          Aceitar Todos
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- ==================== FLOATING WHATSAPP BUTTON (BOTTOM RIGHT) ==================== -->
   <a
@@ -2168,6 +2344,14 @@
       const modal = document.getElementById('protocol-modal');
       modal.classList.remove('hidden');
       modal.classList.add('flex');
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'view_item', {
+          event_category: 'protocolo_clinico',
+          event_label: key,
+          item_name: data.title
+        });
+      }
     }
 
     function closeProtocolModal() {
@@ -2175,6 +2359,127 @@
       modal.classList.add('hidden');
       modal.classList.remove('flex');
     }
+
+    // 9. LGPD Cookie Consent Management & GA4 Conversion Events
+    const LGPD_STORAGE_KEY = 'hs_lgpd_consent_v1';
+
+    function getSavedCookieConsent() {
+      try {
+        const raw = localStorage.getItem(LGPD_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function saveCookieConsent(analyticsAllowed) {
+      const payload = {
+        essential: true,
+        analytics: Boolean(analyticsAllowed),
+        timestamp: new Date().toISOString(),
+        version: '1.0'
+      };
+      try {
+        localStorage.setItem(LGPD_STORAGE_KEY, JSON.stringify(payload));
+      } catch (e) {}
+
+      if (analyticsAllowed) {
+        if (typeof window.enableGoogleAnalytics === 'function') {
+          window.enableGoogleAnalytics();
+        }
+      } else {
+        if (typeof window.disableGoogleAnalytics === 'function') {
+          window.disableGoogleAnalytics();
+        }
+      }
+
+      const banner = document.getElementById('lgpd-cookie-banner');
+      if (banner) {
+        banner.classList.add('hidden');
+      }
+    }
+
+    function acceptAllCookies() {
+      const toggle = document.getElementById('lgpd-analytics-toggle');
+      if (toggle) toggle.checked = true;
+      saveCookieConsent(true);
+    }
+
+    function rejectOptionalCookies() {
+      const toggle = document.getElementById('lgpd-analytics-toggle');
+      if (toggle) toggle.checked = false;
+      saveCookieConsent(false);
+    }
+
+    function saveCustomCookiePreferences() {
+      const toggle = document.getElementById('lgpd-analytics-toggle');
+      const allowAnalytics = toggle ? toggle.checked : false;
+      saveCookieConsent(allowAnalytics);
+    }
+
+    function toggleCookieDetails() {
+      const details = document.getElementById('lgpd-cookie-details');
+      const btn = document.getElementById('lgpd-details-btn');
+      if (!details) return;
+      const isHidden = details.classList.contains('hidden');
+      if (isHidden) {
+        details.classList.remove('hidden');
+        if (btn) btn.textContent = 'Ocultar';
+      } else {
+        details.classList.add('hidden');
+        if (btn) btn.textContent = 'Configurar';
+      }
+    }
+
+    function openCookieBanner(showDetails) {
+      const banner = document.getElementById('lgpd-cookie-banner');
+      const details = document.getElementById('lgpd-cookie-details');
+      const btn = document.getElementById('lgpd-details-btn');
+      const toggle = document.getElementById('lgpd-analytics-toggle');
+      const current = getSavedCookieConsent();
+
+      if (toggle) {
+        toggle.checked = current ? Boolean(current.analytics) : true;
+      }
+      if (banner) {
+        banner.classList.remove('hidden');
+      }
+      if (showDetails && details) {
+        details.classList.remove('hidden');
+        if (btn) btn.textContent = 'Ocultar';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const existingConsent = getSavedCookieConsent();
+      if (!existingConsent) {
+        openCookieBanner(false);
+      }
+
+      // Track high-value conversion clicks (WhatsApp, Instagram, TikTok) when GA4 is active
+      document.querySelectorAll('a[href*="wa.me/"]').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              event_category: 'engagement',
+              event_label: 'whatsapp_agendamento'
+            });
+          }
+        });
+      });
+
+      document.querySelectorAll('a[href*="instagram.com"], a[href*="tiktok.com"]').forEach((link) => {
+        link.addEventListener('click', () => {
+          if (typeof gtag === 'function') {
+            const isInsta = link.href.includes('instagram.com');
+            gtag('event', 'social_click', {
+              event_category: 'social',
+              event_label: isInsta ? 'instagram' : 'tiktok'
+            });
+          }
+        });
+      });
+    });
 
     // Close modals with Escape key
     window.addEventListener('keydown', (e) => {
